@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/btree.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/btree.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/bufHashTbl.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/bufHashTbl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/buffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/buffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_buffer_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_buffer_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_index_info_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_index_info_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_opcodes_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_opcodes_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_scan_param_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_scan_param_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_scanrange_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/bad_scanrange_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/badgerdb_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/badgerdb_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/buffer_exceeded_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/buffer_exceeded_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/end_of_file_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/end_of_file_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_exists_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_exists_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_not_found_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_not_found_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_open_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/file_open_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_already_present_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_already_present_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_not_found_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_not_found_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_table_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/hash_table_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/index_scan_completed_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/index_scan_completed_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/insufficient_space_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/insufficient_space_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_page_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_page_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_record_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_record_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_slot_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/invalid_slot_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/no_such_key_found_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/no_such_key_found_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/page_not_pinned_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/page_not_pinned_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/page_pinned_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/page_pinned_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/scan_not_initialized_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/scan_not_initialized_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/slot_in_use_exception.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/exceptions/slot_in_use_exception.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/file.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/file.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/file_iterator.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/filescan.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/filescan.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/page.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/page.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/page_iterator.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/types.h" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.4.7/include" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.4.7/include" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
