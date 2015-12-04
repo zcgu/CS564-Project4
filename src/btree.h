@@ -439,12 +439,15 @@ class BTreeIndex {
 	**/
 	const void insertEntry(const void* key, const RecordId rid);
 
-	void insertEntryRecursive(RIDKeyPair<int > ridKeyPair,
+	template <class T, class T1, class T2>
+	void insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
 							  PageId pageId,
 							  bool isLeaf,
-							  int& newValue,
+							  T& newValue,
 							  PageId& newPage);
 
+	template<class T, class T1>
+	void handleNewRoot(T newValue, PageId newPageId);
   /**
 	 * Begin a filtered scan of the index.  For instance, if the method is called
 	 * using ("a",GT,"d",LTE) then we should seek all entries with a value
