@@ -166,7 +166,8 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
-//	errorTests();
+	errorTests();
+	File::remove(intIndexName);
 
   return 1;
 }
