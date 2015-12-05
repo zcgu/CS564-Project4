@@ -48,7 +48,6 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		Page* page;
 		bufMgrIn->allocPage(file, headerPageNum, page);
 		IndexMetaInfo* indexMetaInfo = (IndexMetaInfo*) page;
-		indexMetaInfo->rootPageNo = rootPageNum;
 		indexMetaInfo->attrByteOffset = attrByteOffset;
 		indexMetaInfo->attrType = attrType;
 		strcpy(indexMetaInfo->relationName, relationName.c_str());
@@ -56,25 +55,17 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 
 		//root page
 		bufMgrIn->allocPage(file, rootPageNum, page);
-		switch (attrType) {
-			case INTEGER: {
-				NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
-				nonLeafNodeInt->level = 1;
-				break;
-			}
-			case DOUBLE: {
-				NonLeafNodeDouble *nonLeafNodeDouble = (NonLeafNodeDouble *) page;
-				nonLeafNodeDouble->level = 1;
-				break;
-			}
-			case STRING: {
-				NonLeafNodeString *nonLeafNodeString = (NonLeafNodeString *) page;
-				nonLeafNodeString->level = 1;
-				break;
-			}
-			default:
-				break;
+		if(attributeType == INTEGER){
+			NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
+			nonLeafNodeInt->level = 1;
+		} else if(attributeType == DOUBLE){
+			NonLeafNodeDouble *nonLeafNodeDouble = (NonLeafNodeDouble *) page;
+			nonLeafNodeDouble->level = 1;
+		} else {
+			NonLeafNodeString *nonLeafNodeString = (NonLeafNodeString *) page;
+			nonLeafNodeString->level = 1;
 		}
+
 		bufMgrIn->unPinPage(file, rootPageNum, true);
 
 		//insert index
@@ -521,11 +512,11 @@ void BTreeIndex::startScanHelper(T lowValParm,
 								 T highValParm)
 {
 	//find first one
-	currentPageNum = rootPageNum;
+	currentPageNum = rootPageNum;	std::cout<<"start scan read root page:" << rootPageNum<<std::endl;//TODO
 	bufMgr->readPage(file, currentPageNum, currentPageData);
-	T1* nonLeafNode = (T1*) currentPageData;
+	T1* nonLeafNode = (T1*) currentPageData; std::cout<<"current page level:" << nonLeafNode->level<<std::endl;//TODO
 
-	while(nonLeafNode->level != 1) {std::cout<<"1";//TODO
+	while(nonLeafNode->level != 1) {//std::cout<<"1";//TODO
 		PageId nextPageId = nonLeafNode->pageNoArray[0];
 		bufMgr->readPage(file, nextPageId, currentPageData);
 		bufMgr->unPinPage(file, currentPageNum, false);

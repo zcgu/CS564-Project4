@@ -14,9 +14,9 @@
     <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="$PROJECT_DIR$/src/badgerdb_main" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="$PROJECT_DIR$/src/obj/btree.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="$PROJECT_DIR$/src/obj/main.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.cpp" afterPath="$PROJECT_DIR$/src/btree.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.h" afterPath="$PROJECT_DIR$/src/btree.h" />
     </list>
     <ignored path="BTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,15 +40,15 @@
       <file leaf-file-name="btree.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/btree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6492308">
-              <caret line="595" column="1" selection-start-line="595" selection-start-column="1" selection-end-line="595" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.51901335">
+              <caret line="516" column="94" selection-start-line="516" selection-start-column="94" selection-end-line="516" selection-end-column="94" />
               <folding>
                 <element signature="e#213#231#0" expanded="true" />
-                <element signature="e#3622#5514#0" expanded="false" />
-                <element signature="e#5525#5554#0" expanded="true" />
-                <element signature="e#11677#11696#0" expanded="true" />
-                <element signature="e#14650#14669#0" expanded="true" />
-                <element signature="e#15903#15922#0" expanded="true" />
+                <element signature="e#3507#5399#0" expanded="false" />
+                <element signature="e#5410#5439#0" expanded="true" />
+                <element signature="e#11562#11581#0" expanded="true" />
+                <element signature="e#14535#14554#0" expanded="true" />
+                <element signature="e#15936#15955#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +57,8 @@
       <file leaf-file-name="btree.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/btree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.535715">
-              <caret line="485" column="63" selection-start-line="485" selection-start-column="63" selection-end-line="485" selection-end-column="63" />
+            <state vertical-scroll-proportion="9.642858">
+              <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
               <folding>
                 <element signature="e#2845#2854#0" expanded="true" />
                 <element signature="e#3144#3153#0" expanded="true" />
@@ -125,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="499" column="22" selection-start-line="499" selection-start-column="22" selection-end-line="499" selection-end-column="22" />
+              <caret line="500" column="51" selection-start-line="500" selection-start-column="51" selection-end-line="500" selection-end-column="51" />
               <folding>
                 <element signature="e#213#230#0" expanded="true" />
               </folding>
@@ -166,8 +166,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/btree.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/btree.cpp" />
       </list>
     </option>
@@ -300,7 +300,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449271802856</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="11/4">
+      <created>1449280407536</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1449280407536</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -309,6 +315,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13365282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -317,7 +324,6 @@
       <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33919063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -340,7 +346,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="11/4 5:29" />
-    <option name="LAST_COMMIT_MESSAGE" value="11/4 5:29" />
+    <MESSAGE value="11/4" />
+    <option name="LAST_COMMIT_MESSAGE" value="11/4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -353,11 +360,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#213#231#0" expanded="true" />
-            <element signature="e#3622#5514#0" expanded="false" />
-            <element signature="e#5525#5554#0" expanded="true" />
-            <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#3507#5399#0" expanded="false" />
+            <element signature="e#5410#5439#0" expanded="true" />
+            <element signature="e#11562#11581#0" expanded="true" />
+            <element signature="e#14535#14554#0" expanded="true" />
+            <element signature="e#15936#15955#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -449,11 +456,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#213#231#0" expanded="true" />
-            <element signature="e#3622#5514#0" expanded="false" />
-            <element signature="e#5525#5554#0" expanded="true" />
-            <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#3507#5399#0" expanded="false" />
+            <element signature="e#5410#5439#0" expanded="true" />
+            <element signature="e#11562#11581#0" expanded="true" />
+            <element signature="e#14535#14554#0" expanded="true" />
+            <element signature="e#15936#15955#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -545,11 +552,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#213#231#0" expanded="true" />
-            <element signature="e#3622#5514#0" expanded="false" />
-            <element signature="e#5525#5554#0" expanded="true" />
-            <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#3507#5399#0" expanded="false" />
+            <element signature="e#5410#5439#0" expanded="true" />
+            <element signature="e#11562#11581#0" expanded="true" />
+            <element signature="e#14535#14554#0" expanded="true" />
+            <element signature="e#15936#15955#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,8 +733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.535715">
-          <caret line="485" column="63" selection-start-line="485" selection-start-column="63" selection-end-line="485" selection-end-column="63" />
+        <state vertical-scroll-proportion="9.642858">
+          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
           <folding>
             <element signature="e#2845#2854#0" expanded="true" />
             <element signature="e#3144#3153#0" expanded="true" />
@@ -742,7 +749,7 @@
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="499" column="22" selection-start-line="499" selection-start-column="22" selection-end-line="499" selection-end-column="22" />
+          <caret line="500" column="51" selection-start-line="500" selection-start-column="51" selection-end-line="500" selection-end-column="51" />
           <folding>
             <element signature="e#213#230#0" expanded="true" />
           </folding>
@@ -751,15 +758,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6492308">
-          <caret line="595" column="1" selection-start-line="595" selection-start-column="1" selection-end-line="595" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.51901335">
+          <caret line="516" column="94" selection-start-line="516" selection-start-column="94" selection-end-line="516" selection-end-column="94" />
           <folding>
             <element signature="e#213#231#0" expanded="true" />
-            <element signature="e#3622#5514#0" expanded="false" />
-            <element signature="e#5525#5554#0" expanded="true" />
-            <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#3507#5399#0" expanded="false" />
+            <element signature="e#5410#5439#0" expanded="true" />
+            <element signature="e#11562#11581#0" expanded="true" />
+            <element signature="e#14535#14554#0" expanded="true" />
+            <element signature="e#15936#15955#0" expanded="true" />
           </folding>
         </state>
       </provider>
