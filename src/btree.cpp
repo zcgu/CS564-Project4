@@ -102,11 +102,11 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		bufMgrIn->unPinPage(file, headerPageNum, false);
 
 		std::cout << "Finish Read index file //Gu"
-		<< "hearpage: " << headerPageNum << "rootpage:" << rootPageNum<< std::endl; //TODO: delete
+		<< "hearpage: " << headerPageNum << " rootpage: " << rootPageNum<< std::endl; //TODO: delete
 	}
 	catch (EndOfFileException e){
-		std::cout << "Finish Read all records //Gu"
-		<< "hearpage: " << headerPageNum << "rootpage:" << rootPageNum<< std::endl; //TODO: delete
+		std::cout << "Finish build index, "
+		<< "hearpage: " << headerPageNum << " rootpage: " << rootPageNum<< std::endl; //TODO: delete
 	}
 }
 
@@ -417,10 +417,10 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 				nonLeafNode->pageNoArray[(ARRAYMAX2 + 1) / 2] = tmpPageIdArray[(ARRAYMAX2 + 1) / 2];
 
 				for(int i= (ARRAYMAX2 + 1) / 2 + 1; i < ARRAYMAX2 + 1; i++){
-					newNonLeafNode->keyArray[i] = tmpKeyArray[i];
-					newNonLeafNode->pageNoArray[i] = tmpPageIdArray[i];
+					newNonLeafNode->keyArray[i - (ARRAYMAX2 + 1)/2 - 1] = tmpKeyArray[i];
+					newNonLeafNode->pageNoArray[i - (ARRAYMAX2 + 1)/2 - 1] = tmpPageIdArray[i];
 				}
-				newNonLeafNode->pageNoArray[ARRAYMAX2 + 1] = tmpPageIdArray[ARRAYMAX2 + 1];
+				newNonLeafNode->pageNoArray[ARRAYMAX2 + 1 - (ARRAYMAX2 + 1)/2 - 1] = tmpPageIdArray[ARRAYMAX2 + 1];
 
 				//level
 				newNonLeafNode->level = nonLeafNode->level;
@@ -441,7 +441,7 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 
 template<class T, class T1>
 void BTreeIndex::handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX){
-	std::cout<<"handle new root"<<std::endl; //TODO
+	std::cout<<"handle new root, current root number is : "<<rootPageNum <<std::endl; //TODO
 	PageId newRootPageId;
 	Page *newRootPage;
 	bufMgr->allocPage(file, newRootPageId, newRootPage);
@@ -453,8 +453,9 @@ void BTreeIndex::handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX){
 	newRootNonLeafNode->pageNoArray[1] = newPageId;
 	newRootNonLeafNode->level = 0;
 	rootPageNum = newRootPageId;
-	bufMgr->unPinPage(file, newRootPageId, true);std::cout<<"handle new root finish"<<std::endl; //TODO
-	std::cout<<"handle new root finish"<<std::endl; //TODO
+	bufMgr->unPinPage(file, newRootPageId, true);
+	std::cout<<"handle new root finish, new root number is: "<<rootPageNum
+	<<" right child is: "<< newPageId <<std::endl; //TODO
 }
 // -----------------------------------------------------------------------------
 // BTreeIndex::insertEntry
@@ -565,8 +566,9 @@ void BTreeIndex::startScanHelper(T lowValParm,
 	bufMgr->readPage(file, currentPageNum, currentPageData);
 	T1* nonLeafNode = (T1*) currentPageData; std::cout<<"current page level:" << nonLeafNode->level<<std::endl;//TODO
 
-	while(nonLeafNode->level != 1) {//std::cout<<"1";//TODO
+	while(nonLeafNode->level != 1) {
 		PageId nextPageId = nonLeafNode->pageNoArray[0];
+		std::cout<<"Start scan go to next nonleaf page: "<< nextPageId <<std::endl;//TODO
 		bufMgr->readPage(file, nextPageId, currentPageData);
 		bufMgr->unPinPage(file, currentPageNum, false);
 		currentPageNum = nextPageId;
@@ -615,7 +617,7 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 				std::cout<<"scan finish"<<std::endl; //TODO:delete
 				throw IndexScanCompletedException();
 			}
-
+			std::cout<<"Next scan go to next leaf page: "<< nextPageNum <<std::endl;//TODO
 			bufMgr->unPinPage(file, currentPageNum, false);
 			currentPageNum = nextPageNum;
 
@@ -624,6 +626,8 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry = 0;
 			continue;
 		}
+		
+		//std::cout<< "scan next key: "<<leafNode->keyArray[nextEntry] << std::endl;		
 
 		if((lowOp==GT && leafNode->keyArray[nextEntry] <= lowVal)
 		   || (lowOp==GTE && leafNode->keyArray[nextEntry] < lowVal)
@@ -633,7 +637,9 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry++;
 			continue;
 		}
-
+	
+			
+		std::cout<<" Got one ! : "<<  leafNode->keyArray[nextEntry]<< " at page: "<<currentPageNum  << std::endl;
 		outRid = leafNode->ridArray[nextEntry];
 		nextEntry++;
 		return ;
