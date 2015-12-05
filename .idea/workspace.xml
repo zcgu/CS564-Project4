@@ -11,42 +11,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="12/4">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/bufmgr.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/exceptions.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/bufHashTbl.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/buffer.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/file.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/filescan.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/page.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BTree.iml" afterPath="$PROJECT_DIR$/.idea/BTree.iml" />
+    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BTree.iws" />
@@ -319,7 +284,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449286567975</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test case create">
+      <created>1449296714081</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1449296714081</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -328,6 +299,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1342318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32790223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -335,7 +307,6 @@
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33908355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -361,7 +332,8 @@
     <MESSAGE value="11/4 5:29" />
     <MESSAGE value="11/4" />
     <MESSAGE value="12/4" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/4" />
+    <MESSAGE value="test case create" />
+    <option name="LAST_COMMIT_MESSAGE" value="test case create" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
