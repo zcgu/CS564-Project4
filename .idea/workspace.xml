@@ -12,11 +12,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="$PROJECT_DIR$/src/badgerdb_main" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="$PROJECT_DIR$/src/obj/btree.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="$PROJECT_DIR$/src/obj/main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.cpp" afterPath="$PROJECT_DIR$/src/btree.cpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/bufmgr.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/exceptions.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/bufHashTbl.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/buffer.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/file.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/filescan.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/obj/page.o" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BTree.iml" afterPath="$PROJECT_DIR$/.idea/BTree.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="BTree.iws" />
@@ -113,7 +140,7 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19740778">
+            <state vertical-scroll-proportion="0.4135864">
               <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
               <folding>
                 <element signature="e#213#230#0" expanded="true" />
@@ -312,7 +339,7 @@
     <frame x="-2" y="25" width="1924" height="1154" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13578275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1368477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -799,7 +826,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19740778">
+        <state vertical-scroll-proportion="0.4135864">
           <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
           <folding>
             <element signature="e#213#230#0" expanded="true" />
