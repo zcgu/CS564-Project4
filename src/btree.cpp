@@ -441,23 +441,20 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 
 template<class T, class T1>
 void BTreeIndex::handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX){
-
+	std::cout<<"handle new root"<<std::endl; //TODO
 	PageId newRootPageId;
 	Page *newRootPage;
 	bufMgr->allocPage(file, newRootPageId, newRootPage);
 
-	Page *page;
-	bufMgr->readPage(file, rootPageNum, page);
-
-	T1 *newRootNonLeafNode = (T1 *) page;
-	for(int i=0;i<ARRAYMAX; i++) newRootNonLeafNode->pageNoArray[i] = 0;
+	T1 *newRootNonLeafNode = (T1 *) newRootPage;
+	for(int i=0;i<ARRAYMAX + 1; i++) newRootNonLeafNode->pageNoArray[i] = 0;
 	newRootNonLeafNode->keyArray[0] = newValue;
 	newRootNonLeafNode->pageNoArray[0] = rootPageNum;
 	newRootNonLeafNode->pageNoArray[1] = newPageId;
 	newRootNonLeafNode->level = 0;
 	rootPageNum = newRootPageId;
-	bufMgr->unPinPage(file, newRootPageId, true);
-	bufMgr->unPinPage(file, rootPageNum, true);
+	bufMgr->unPinPage(file, newRootPageId, true);std::cout<<"handle new root finish"<<std::endl; //TODO
+	std::cout<<"handle new root finish"<<std::endl; //TODO
 }
 // -----------------------------------------------------------------------------
 // BTreeIndex::insertEntry
@@ -494,6 +491,9 @@ const void BTreeIndex::insertEntry(const void *key, const RecordId rid)
 		//if root got split
 		if (newPageIdDouble != 0)
 			handleNewRoot<double, NonLeafNodeDouble>(newValueDouble, newPageIdDouble, DOUBLEARRAYNONLEAFSIZE);
+
+	} else if (attributeType == STRING){
+		RIDKeyPair<char[STRINGSIZE] > ridKeyPair;
 
 	}
 	/*
