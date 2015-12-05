@@ -499,41 +499,49 @@ const void BTreeIndex::startScan(const void* lowValParm,
 				   const Operator highOpParm)
 {
 	scanExecuting = true;
+	this->lowOp = lowOpParm;
+	this->highOp = highOpParm;
 
-	switch (attributeType) {
-		case INTEGER:{
-			this->lowOp = lowOpParm;
-			this->highOp = highOpParm;
-			this->lowValInt = *((int*) lowValParm);
-			this->highValInt = *((int *) highValParm);
-		}
+	if(attributeType == INTEGER) {
+		this->lowValInt = *((int*) lowValParm);
+		this->highValInt = *((int *) highValParm);
+		startScanHelper<int, NonLeafNodeInt>(*((int*) lowValParm), *((int *) highValParm));
+	} else if (attributeType == DOUBLE) {
+		this->lowValDouble = *((double*) lowValParm);
+		this->highValDouble = *((double *) highValParm);
+		startScanHelper<double , NonLeafNodeDouble>(*((double *) lowValParm), *((double *) highValParm));
+	} else {
+		//TODO
 	}
 
+}
+
+template<class T, class T1>
+void BTreeIndex::startScanHelper(T lowValParm,
+								 T highValParm)
+{
 	//find first one
 	currentPageNum = rootPageNum;
 	bufMgr->readPage(file, currentPageNum, currentPageData);
-	std::cout<< "start scan, open rootpage"<< std::endl;	//TODO:delete
-	NonLeafNodeInt* nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
+	T1* nonLeafNode = (T1*) currentPageData;
 
-	while(nonLeafNodeInt->level != 1) {
-		PageId nextPageId = nonLeafNodeInt->pageNoArray[0];
-		std::cout<<"start scan, go to page: "<< nextPageId <<std::endl; //TODO:endl
+	while(nonLeafNode->level != 1) {std::cout<<"1";//TODO
+		PageId nextPageId = nonLeafNode->pageNoArray[0];
 		bufMgr->readPage(file, nextPageId, currentPageData);
 		bufMgr->unPinPage(file, currentPageNum, false);
 		currentPageNum = nextPageId;
-		nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
+		nonLeafNode = (T1*) currentPageData;
 	}
-	PageId nextPageId = nonLeafNodeInt->pageNoArray[0];
+	PageId nextPageId = nonLeafNode->pageNoArray[0];
 	bufMgr->readPage(file, nextPageId, currentPageData);
 	bufMgr->unPinPage(file, currentPageNum, false);
 	currentPageNum = nextPageId;
-	nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
 
 	nextEntry = 0;
 
-	std::cout<< "start scan complete" << std::endl
-	<<"current page:"<<currentPageNum << std::endl;	//TODO:delete
+	std::cout<< "start scan complete" << std::endl;
 }
+
 
 // -----------------------------------------------------------------------------
 // BTreeIndex::scanNext
@@ -541,50 +549,51 @@ const void BTreeIndex::startScan(const void* lowValParm,
 
 const void BTreeIndex::scanNext(RecordId& outRid) 
 {
-	switch (attributeType){
-		case INTEGER:{
-			LeafNodeInt* leafNodeInt;
-			while(1){
-				leafNodeInt = (LeafNodeInt*) currentPageData;
-				if(leafNodeInt->ridArray[nextEntry].page_number == 0
-						|| nextEntry == INTARRAYLEAFSIZE) {
-//					std::cout<<"scan next try to unpin page"<<currentPageNum << std::endl; //TODO:delete
-
-					PageId nextPageNum = leafNodeInt->rightSibPageNo;
-					if(nextPageNum == 0){
-						std::cout<<"scan finish"<<std::endl; //TODO:delete
-						throw IndexScanCompletedException();
-					}
-
-					bufMgr->unPinPage(file, currentPageNum, false);
-					currentPageNum = nextPageNum;
-
-					bufMgr->readPage(file, currentPageNum, currentPageData);
-//					std::cout<<"scan next try to read page"<<currentPageNum << " complete"<<std::endl; //TODO:delete
-
-					nextEntry = 0;
-					continue;
-				}
-
-				if((lowOp==GT && leafNodeInt->keyArray[nextEntry] <= lowValInt)
-						|| (lowOp==GTE && leafNodeInt->keyArray[nextEntry] < lowValInt)
-						|| (highOp==LT && leafNodeInt->keyArray[nextEntry] >= highValInt)
-						|| (highOp==LTE && leafNodeInt->keyArray[nextEntry] > highValInt))
-				{
-//					std::cout<< "not match: "<< leafNodeInt->keyArray[nextEntry] <<std::endl; //TODO:delete
-					nextEntry++;
-					continue;
-				}
-
-//				std::cout<< "match: "<< leafNodeInt->keyArray[nextEntry] <<std::endl; //TODO:delete
-				outRid = leafNodeInt->ridArray[nextEntry];
-				nextEntry++;
-				return ;
-			}
-		}
+	if(attributeType == INTEGER){
+		scanNextHelper<int, LeafNodeInt> (outRid, lowValInt, highValInt);
+	} else if (attributeType == DOUBLE){
+		scanNextHelper<double, LeafNodeDouble> (outRid, lowValDouble, highValDouble);
 	}
 }
 
+template <class T, class T1>
+void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal)
+{
+	T1* leafNode;
+	while(1){
+		leafNode = (T1*) currentPageData;
+		if(leafNode->ridArray[nextEntry].page_number == 0
+		   || nextEntry == INTARRAYLEAFSIZE) {
+
+			PageId nextPageNum = leafNode->rightSibPageNo;
+			if(nextPageNum == 0){
+				std::cout<<"scan finish"<<std::endl; //TODO:delete
+				throw IndexScanCompletedException();
+			}
+
+			bufMgr->unPinPage(file, currentPageNum, false);
+			currentPageNum = nextPageNum;
+
+			bufMgr->readPage(file, currentPageNum, currentPageData);
+
+			nextEntry = 0;
+			continue;
+		}
+
+		if((lowOp==GT && leafNode->keyArray[nextEntry] <= lowVal)
+		   || (lowOp==GTE && leafNode->keyArray[nextEntry] < lowVal)
+		   || (highOp==LT && leafNode->keyArray[nextEntry] >= highVal)
+		   || (highOp==LTE && leafNode->keyArray[nextEntry] > highVal))
+		{
+			nextEntry++;
+			continue;
+		}
+
+		outRid = leafNode->ridArray[nextEntry];
+		nextEntry++;
+		return ;
+	}
+}
 // -----------------------------------------------------------------------------
 // BTreeIndex::endScan
 // -----------------------------------------------------------------------------
@@ -594,7 +603,6 @@ const void BTreeIndex::endScan()
 	scanExecuting = false;
 	bufMgr->unPinPage(file, currentPageNum, false);
 	bufMgr->flushFile(file);
-
 }
 
 }
