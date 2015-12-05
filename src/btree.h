@@ -448,7 +448,9 @@ class BTreeIndex {
 							  T& newValue,
 							  PageId& newPage);
 
-	template<class T, class T1>
+
+
+		template<class T, class T1>
 	void handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX);
   /**
 	 * Begin a filtered scan of the index.  For instance, if the method is called
