@@ -499,6 +499,23 @@ const void BTreeIndex::startScan(const void* lowValParm,
 				   const Operator highOpParm)
 {
 	scanExecuting = true;
+	if (lowOpParm != GT && lowOpParm !=GTE ){
+		throw BadOpcodesException();
+	}
+
+	if(highOpParm != LT && highOpParm != LTE){
+		throw BadOpcodesException();
+	}
+
+	if(*((int*) lowValParm) > *((int*) highValParm)){
+		throw BadScanrangeException();
+	}
+
+
+
+
+
+
 	this->lowOp = lowOpParm;
 	this->highOp = highOpParm;
 
@@ -549,6 +566,10 @@ void BTreeIndex::startScanHelper(T lowValParm,
 
 const void BTreeIndex::scanNext(RecordId& outRid) 
 {
+	if(scanExecuting == false){
+		throw ScanNotInitializedException();
+	}
+
 	if(attributeType == INTEGER){
 		scanNextHelper<int, LeafNodeInt> (outRid, lowValInt, highValInt);
 	} else if (attributeType == DOUBLE){
@@ -559,6 +580,8 @@ const void BTreeIndex::scanNext(RecordId& outRid)
 template <class T, class T1>
 void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal)
 {
+
+
 	T1* leafNode;
 	while(1){
 		leafNode = (T1*) currentPageData;
@@ -600,9 +623,13 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal)
 //
 const void BTreeIndex::endScan() 
 {
-	scanExecuting = false;
-	bufMgr->unPinPage(file, currentPageNum, false);
-	bufMgr->flushFile(file);
+	if(scanExecuting == false){
+		throw ScanNotInitializedException();
+	}else {
+		scanExecuting = false;
+		bufMgr->unPinPage(file, currentPageNum, false);
+		bufMgr->flushFile(file);
+	}
 }
 
 }

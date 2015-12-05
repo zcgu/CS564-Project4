@@ -12,7 +12,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="$PROJECT_DIR$/src/badgerdb_main" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/bufmgr.a" afterPath="$PROJECT_DIR$/src/lib/bufmgr.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/exceptions.a" afterPath="$PROJECT_DIR$/src/lib/exceptions.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="$PROJECT_DIR$/src/obj/btree.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/bufHashTbl.o" afterPath="$PROJECT_DIR$/src/obj/bufHashTbl.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/buffer.o" afterPath="$PROJECT_DIR$/src/obj/buffer.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/file.o" afterPath="$PROJECT_DIR$/src/obj/file.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/filescan.o" afterPath="$PROJECT_DIR$/src/obj/filescan.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="$PROJECT_DIR$/src/obj/main.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/page.o" afterPath="$PROJECT_DIR$/src/obj/page.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.cpp" afterPath="$PROJECT_DIR$/src/btree.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="BTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,18 +69,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="btree.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="btree.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/btree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5511111">
-              <caret line="578" column="26" selection-start-line="578" selection-start-column="26" selection-end-line="578" selection-end-column="26" />
+            <state vertical-scroll-proportion="-12.214286">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#213#231#0" expanded="true" />
                 <element signature="e#3622#5514#0" expanded="false" />
                 <element signature="e#5525#5554#0" expanded="true" />
                 <element signature="e#11677#11696#0" expanded="true" />
-                <element signature="e#14650#14669#0" expanded="true" />
-                <element signature="e#15903#15922#0" expanded="true" />
+                <element signature="e#14900#14919#0" expanded="true" />
+                <element signature="e#16225#16244#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,11 +153,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="499" column="22" selection-start-line="499" selection-start-column="22" selection-end-line="499" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.64031005">
+              <caret line="178" column="54" selection-start-line="178" selection-start-column="54" selection-end-line="178" selection-end-column="54" />
               <folding>
                 <element signature="e#213#230#0" expanded="true" />
               </folding>
@@ -162,9 +198,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/btree.h" />
         <option value="$PROJECT_DIR$/src/btree.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
@@ -174,6 +210,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="23" />
     <option name="y" value="25" />
     <option name="width" value="1920" />
     <option name="height" value="1150" />
@@ -218,6 +255,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CS564-Project4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BTree" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS564-Project4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,19 +338,25 @@
       <option name="project" value="LOCAL" />
       <updated>1449281015283</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="exception">
+      <created>1449281043419</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1449281043419</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1150" extended-state="0" />
-    <editor active="false" />
+    <frame x="23" y="25" width="1920" height="1150" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1336117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32888466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32888466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33872652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -394,8 +451,8 @@
             <element signature="e#3622#5514#0" expanded="false" />
             <element signature="e#5525#5554#0" expanded="true" />
             <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#14900#14919#0" expanded="true" />
+            <element signature="e#16225#16244#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -490,8 +547,8 @@
             <element signature="e#3622#5514#0" expanded="false" />
             <element signature="e#5525#5554#0" expanded="true" />
             <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#14900#14919#0" expanded="true" />
+            <element signature="e#16225#16244#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,8 +643,8 @@
             <element signature="e#3622#5514#0" expanded="false" />
             <element signature="e#5525#5554#0" expanded="true" />
             <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#14900#14919#0" expanded="true" />
+            <element signature="e#16225#16244#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -777,27 +834,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="499" column="22" selection-start-line="499" selection-start-column="22" selection-end-line="499" selection-end-column="22" />
-          <folding>
-            <element signature="e#213#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5511111">
-          <caret line="578" column="26" selection-start-line="578" selection-start-column="26" selection-end-line="578" selection-end-column="26" />
+        <state vertical-scroll-proportion="-12.214286">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#213#231#0" expanded="true" />
             <element signature="e#3622#5514#0" expanded="false" />
             <element signature="e#5525#5554#0" expanded="true" />
             <element signature="e#11677#11696#0" expanded="true" />
-            <element signature="e#14650#14669#0" expanded="true" />
-            <element signature="e#15903#15922#0" expanded="true" />
+            <element signature="e#14900#14919#0" expanded="true" />
+            <element signature="e#16225#16244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64031005">
+          <caret line="178" column="54" selection-start-line="178" selection-start-column="54" selection-end-line="178" selection-end-column="54" />
+          <folding>
+            <element signature="e#213#230#0" expanded="true" />
           </folding>
         </state>
       </provider>
