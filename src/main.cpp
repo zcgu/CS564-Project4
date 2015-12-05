@@ -166,7 +166,7 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
-	errorTests();
+//	errorTests();
 
   return 1;
 }
@@ -378,9 +378,10 @@ void indexTests()
 		try
 		{
 			File::remove(intIndexName);
+			std::cout<< "delete file complete" << std::endl;
 		}
   	catch(FileNotFoundException e)
-  	{
+  	{std::cout<< "not delete file" << std::endl;
   	}
   }
   else if(testNum == 2)
