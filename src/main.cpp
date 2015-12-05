@@ -166,7 +166,7 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
-	//errorTests();
+	errorTests();
 
   return 1;
 }
