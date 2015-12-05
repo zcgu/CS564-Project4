@@ -443,11 +443,13 @@ class BTreeIndex {
 	void insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
 							  PageId pageId,
 							  bool isLeaf,
+							  int ARRAYMAX1,
+							  int ARRAYMAX2,
 							  T& newValue,
 							  PageId& newPage);
 
 	template<class T, class T1>
-	void handleNewRoot(T newValue, PageId newPageId);
+	void handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX);
   /**
 	 * Begin a filtered scan of the index.  For instance, if the method is called
 	 * using ("a",GT,"d",LTE) then we should seek all entries with a value
@@ -468,7 +470,7 @@ class BTreeIndex {
 
 	template<class T, class T1>
 	void startScanHelper(T lowValParm,
-									 T highValParm
+						 T highValParm
 	);
 
 
@@ -483,7 +485,7 @@ class BTreeIndex {
 
 
 	template <class T, class T1>
-	void scanNextHelper(RecordId& outRid, T lowVal, T highVal);
+	void scanNextHelper(RecordId& outRid, T lowVal, T highVal, int ARRAYMAX);
   /**
 	 * Terminate the current scan. Unpin any pinned pages. Reset scan specific variables.
 	 * @throws ScanNotInitializedException If no scan has been initialized.
