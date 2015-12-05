@@ -42,7 +42,7 @@ using namespace badgerdb;
 int testNum = 1;
 const std::string relationName = "relA";
 //If the relation size is changed then the second parameter 2 chechPassFail may need to be changed to number of record that are expected to be found during the scan, else tests will erroneously be reported to have failed.
-const int	relationSize = 5000;
+const int	relationSize = 4000;
 std::string intIndexName, doubleIndexName, stringIndexName;
 
 // This is the structure for tuples in the base relation
@@ -163,7 +163,7 @@ int main(int argc, char **argv)
 
 	File::remove(relationName);
 
-	test1();
+//	test1();
 	test2();
 	test3();
 	errorTests();
@@ -462,7 +462,7 @@ int intScan(BTreeIndex * index, int lowVal, Operator lowOp, int highVal, Operato
 
 			if( numResults < 5 )
 			{
-				std::cout << "at:" << scanRid.page_number << "," << scanRid.slot_number;
+				std::cout <<std::endl << "at:" << scanRid.page_number << "," << scanRid.slot_number;
 				std::cout << " -->:" << myRec.i << ":" << myRec.d << ":" << myRec.s << ":" <<std::endl;
 			}
 			else if( numResults == 5 )

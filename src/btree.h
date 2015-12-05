@@ -443,8 +443,8 @@ class BTreeIndex {
 	void insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
 							  PageId pageId,
 							  bool isLeaf,
-							  int ARRAYMAX1,
-							  int ARRAYMAX2,
+							  int LEAFARRAYMAX,
+							  int NONLEAFARRAYMAX,
 							  T& newValue,
 							  PageId& newPage);
 
