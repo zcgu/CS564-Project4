@@ -51,10 +51,10 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		indexMetaInfo->attrByteOffset = attrByteOffset;
 		indexMetaInfo->attrType = attrType;
 		strcpy(indexMetaInfo->relationName, relationName.c_str());
-		bufMgrIn->allocPage(file, rootPageNum, page);	//root page
-		indexMetaInfo->rootPageNo = rootPageNum;
 		bufMgrIn->unPinPage(file, headerPageNum, true);
 
+		//root page
+		bufMgrIn->allocPage(file, rootPageNum, page);
 		if(attributeType == INTEGER){
 			NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
 			for(int i=0;i<INTARRAYNONLEAFSIZE;i++) nonLeafNodeInt->pageNoArray[i] = 0;
@@ -70,6 +70,10 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		}
 		bufMgrIn->unPinPage(file, rootPageNum, true);
 
+		bufMgrIn->readPage(file, headerPageNum, page);
+		indexMetaInfo = (IndexMetaInfo*) page;
+		indexMetaInfo->rootPageNo = rootPageNum;
+		bufMgrIn->unPinPage(file, headerPageNum, true);
 
 		//insert index
 		FileScan fscan(relationName, bufMgr);
@@ -77,7 +81,7 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		while(1)
 		{
 			fscan.scanNext(scanRid);
-			insertEntry((void *) fscan.getRecord().c_str() + attrByteOffset, scanRid);	//TODO:?
+			insertEntry((void *) fscan.getRecord().c_str() + attrByteOffset, scanRid);
 		}
 	}
 	catch (FileExistsException e){
@@ -90,11 +94,15 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		//check
 		if(indexMetaInfo->attrByteOffset != attrByteOffset
 		   || indexMetaInfo->attrType != attrType
-		   || !strcmp(indexMetaInfo->relationName, relationName.c_str()))
+		   || strcmp(indexMetaInfo->relationName, relationName.c_str()) != 0
+				)
 			throw BadIndexInfoException("constructor parameters do not match exist index file");
 
 		this->rootPageNum = indexMetaInfo->rootPageNo;
 		bufMgrIn->unPinPage(file, headerPageNum, false);
+
+		std::cout << "Finish Read index file //Gu"
+		<< "hearpage: " << headerPageNum << "rootpage:" << rootPageNum<< std::endl; //TODO: delete
 	}
 	catch (EndOfFileException e){
 		std::cout << "Finish Read all records //Gu"
@@ -642,7 +650,7 @@ const void BTreeIndex::endScan()
 	}else {
 		scanExecuting = false;
 		bufMgr->unPinPage(file, currentPageNum, false);
-//		bufMgr->flushFile(file);
+		bufMgr->flushFile(file);
 	}
 }
 
