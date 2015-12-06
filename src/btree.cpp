@@ -121,89 +121,6 @@ BTreeIndex::~BTreeIndex()
 	file->~File();
 }
 
-
-/*
-void BTreeIndex::insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
-									  PageId pageId,
-									  bool isLeaf,
-						  				T& newValue,
-						  			PageId& newPageId)
-{
-	if(isLeaf){
-		Page* page;
-		bufMgr->readPage(file, pageId, page);
-		switch (attributeType){
-			case INTEGER:{
-				LeafNodeInt* leafNodeInt = (LeafNodeInt*) page;
-				int pos = 0;
-				RIDKeyPair<T> tmpRidKeyPair;
-				RecordId tmpRecordId;
-				tmpRidKeyPair.set(tmpRecordId, leafNodeInt->keyArray[pos]);
-				while( !(ridKeyPair < tmpRidKeyPair) ){
-					if( ++pos == INTARRAYLEAFSIZE) break;
-					tmpRidKeyPair.set(tmpRecordId, leafNodeInt->keyArray[pos]);
-				}
-
-				int last;
-				for (last =0; last < INTARRAYLEAFSIZE; last++)
-					if(leafNodeInt->ridArray[last].page_number == 0)
-						break;
-
-				if(last < INTARRAYLEAFSIZE){
-					//not full
-					for(int i=last; i>pos; i--){
-						leafNodeInt->keyArray[i] = leafNodeInt->keyArray[i-1];
-						leafNodeInt->ridArray[i] = leafNodeInt->ridArray[i-1];
-					}
-					leafNodeInt->keyArray[pos] = ridKeyPair.key;
-					leafNodeInt->ridArray[pos] = ridKeyPair.rid;
-				} else {
-					//full
-					Page* newPage;
-					bufMgr->allocPage(file, newPageId, newPage);
-
-					//tmp array
-					int tmpKeyArray[INTARRAYLEAFSIZE+1];
-					RecordId tmpRidArray[INTARRAYLEAFSIZE +1];
-
-					//copy to tmp
-					for(int i=0; i<INTARRAYLEAFSIZE; i++) {
-						tmpRidArray[i] = leafNodeInt->ridArray[i];
-						tmpKeyArray[i] = leafNodeInt->keyArray[i];
-						leafNodeInt->ridArray[i].page_number = 0;
-					}
-
-					for(int i=INTARRAYLEAFSIZE; i>pos; i--){
-						tmpKeyArray[i] = tmpKeyArray[i-1];
-						tmpRidArray[i] = tmpRidArray[i-1];
-					}
-					tmpKeyArray[pos] = ridKeyPair.key;
-					tmpRidArray[pos] = ridKeyPair.rid;
-
-					//copy back
-					for(int i=0; i<(INTARRAYLEAFSIZE+1)/2;i++ ){
-;
-					}
-
-
-				}
-
-			}
-			case DOUBLE:{
-
-			}
-			case STRING:{
-
-			}
-		}
-	} else {
-		//non leaf
-
-
-	}
-}
-*/
-
 template <class T>
 void copy(T& a, T& b){
 		a = b;
@@ -211,7 +128,9 @@ void copy(T& a, T& b){
 
 template <>
 void copy<char[STRINGSIZE]>(char (&a)[STRINGSIZE], char (&b)[STRINGSIZE]){
-		strncpy( a, b, STRINGSIZE);
+//	std::cout<<" copy string"<<std::endl;
+	strncpy( a, b, STRINGSIZE - 1);
+	a[STRINGSIZE - 1] = '\0';
 }
 
 template <class T>
@@ -481,7 +400,7 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 }
 
 template<class T, class T1>
-void BTreeIndex::handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX){
+void BTreeIndex::handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX){
 	std::cout<<"handle new root"<<std::endl; //TODO
 	PageId newRootPageId;
 	Page *newRootPage;
@@ -489,7 +408,7 @@ void BTreeIndex::handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX){
 
 	T1 *newRootNonLeafNode = (T1 *) newRootPage;
 	for(int i=0;i<ARRAYMAX + 1; i++) newRootNonLeafNode->pageNoArray[i] = 0;
-	newRootNonLeafNode->keyArray[0] = newValue;
+	copy<T> (newRootNonLeafNode->keyArray[0], newValue);
 	newRootNonLeafNode->pageNoArray[0] = rootPageNum;
 	newRootNonLeafNode->pageNoArray[1] = newPageId;
 	newRootNonLeafNode->level = 0;
@@ -537,17 +456,18 @@ const void BTreeIndex::insertEntry(const void *key, const RecordId rid)
 
 		RIDKeyPair<char[STRINGSIZE] > ridKeyPairString;
 		ridKeyPairString.rid = rid;
-		strncpy(ridKeyPairString.key, (char*) key, STRINGSIZE);
+		strncpy(ridKeyPairString.key, (char*) key, STRINGSIZE-1);
+		ridKeyPairString.key[STRINGSIZE - 1] = '\0';
 		char newValue[STRINGSIZE];
 		PageId newPageId = 0;
 
 		//call recursive function
 		insertEntryRecursive<char[STRINGSIZE], LeafNodeString, NonLeafNodeString>
-				(ridKeyPairString, rootPageNum, 0, DOUBLEARRAYLEAFSIZE, DOUBLEARRAYNONLEAFSIZE, newValue, newPageId);
+				(ridKeyPairString, rootPageNum, 0, STRINGARRAYLEAFSIZE, STRINGARRAYNONLEAFSIZE, newValue, newPageId);
 
 		//if root got split
-//		if (newPageId != 0)
-//			handleNewRoot<char *, NonLeafNodeString>(newValue, newPageId, DOUBLEARRAYNONLEAFSIZE);
+		if (newPageId != 0)
+			handleNewRoot<char[STRINGSIZE], NonLeafNodeString>(newValue, newPageId, STRINGARRAYNONLEAFSIZE);
 
 	}
 
@@ -566,16 +486,9 @@ const void BTreeIndex::startScan(const void* lowValParm,
 	if (lowOpParm != GT && lowOpParm !=GTE ){
 		throw BadOpcodesException();
 	}
-
 	if(highOpParm != LT && highOpParm != LTE){
 		throw BadOpcodesException();
 	}
-
-
-
-
-
-
 
 	this->lowOp = lowOpParm;
 	this->highOp = highOpParm;
@@ -589,7 +502,15 @@ const void BTreeIndex::startScan(const void* lowValParm,
 		this->highValDouble = *((double *) highValParm);
 		startScanHelper<double , NonLeafNodeDouble>(*((double *) lowValParm), *((double *) highValParm));
 	} else {
-		//TODO
+		strncpy((char*) this->lowValString.c_str(), (char *)lowValParm, STRINGSIZE-1);
+		strncpy(lowValChar, (char *)lowValParm, STRINGSIZE-1);
+		lowValChar[STRINGSIZE - 1] = '\0';
+		strncpy((char*) this->highValString.c_str(), (char *)highValParm, STRINGSIZE-1);
+		strncpy(highValChar, (char *)highValParm, STRINGSIZE-1);
+		highValChar[STRINGSIZE - 1] = '\0';
+
+		std::cout<< "Start scan finish, lowValChar: "<< lowValChar <<" highValChar: "<< highValChar<<std::endl;
+		startScanHelper<char[STRINGSIZE], NonLeafNodeString> (lowValChar, highValChar);
 	}
 
 }
@@ -598,7 +519,7 @@ template<class T, class T1>
 void BTreeIndex::startScanHelper(T lowValParm,
 								 T highValParm)
 {
-	if(lowValParm >  highValParm)
+	if(biggerThan(lowValParm,  highValParm))
 		throw BadScanrangeException();
 
 	//find first one
@@ -638,6 +559,8 @@ const void BTreeIndex::scanNext(RecordId& outRid)
 		scanNextHelper<int, LeafNodeInt> (outRid, lowValInt, highValInt, INTARRAYLEAFSIZE);
 	} else if (attributeType == DOUBLE){
 		scanNextHelper<double, LeafNodeDouble> (outRid, lowValDouble, highValDouble, DOUBLEARRAYLEAFSIZE);
+	} else {
+		scanNextHelper<char[STRINGSIZE], LeafNodeString> (outRid, lowValChar, highValChar, STRINGARRAYLEAFSIZE);
 	}
 
 }
@@ -665,16 +588,16 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry = 0;
 			continue;
 		}
-//		std::cout<<leafNode->keyArray[nextEntry] << ", "; //TODO:delete
-		if((lowOp==GT && leafNode->keyArray[nextEntry] <= lowVal)
-		   || (lowOp==GTE && leafNode->keyArray[nextEntry] < lowVal)
-		   || (highOp==LT && leafNode->keyArray[nextEntry] >= highVal)
-		   || (highOp==LTE && leafNode->keyArray[nextEntry] > highVal))
+
+		if((lowOp==GT && !biggerThan<T> (leafNode->keyArray[nextEntry], lowVal) )
+		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal))
+		   || (highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
+		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) ))
 		{
 			nextEntry++;
 			continue;
 		}
-
+		std::cout<<"Got: "<< std::endl <<leafNode->keyArray[nextEntry] << std::endl; //TODO:delete
 		outRid = leafNode->ridArray[nextEntry];
 		nextEntry++;
 		return ;
