@@ -79,8 +79,16 @@ void test2();
 void test3();
 void test4();
 void test5();
+void test6();
 void errorTests();
 void deleteRelation();
+void indexTests3();
+
+void intTests3();
+
+void doubleTests3();
+
+void stringTests3();
 
 int main(int argc, char **argv)
 {
@@ -170,6 +178,7 @@ int main(int argc, char **argv)
 	test3();
 //	test4();
 //	test5();
+	test6();
 	errorTests();
 	File::remove(intIndexName);
 
@@ -270,6 +279,24 @@ void test5()
 
 	relationSize = 5000;
 }
+
+void test6() {
+
+	createRelationForward();
+	indexTests3();
+	deleteRelation();
+
+	createRelationBackward();
+	indexTests3();
+	deleteRelation();
+
+	createRelationRandom();
+	indexTests3();
+	deleteRelation();
+	std::cout << "test6 passed" << std::endl;
+}
+
+
 
 
 // -----------------------------------------------------------------------------
@@ -475,6 +502,71 @@ void indexTests()
   	}
   }
 }
+
+void indexTests3() {
+	if(testNum == 1)
+	{
+		intTests3();
+		try
+		{
+			File::remove(intIndexName);
+			std::cout<< "delete file complete" << std::endl;
+		}
+		catch(FileNotFoundException e)
+		{std::cout<< "not delete file" << std::endl;
+		}
+	}
+	else if(testNum == 2)
+	{
+		doubleTests3();
+		try
+		{
+			File::remove(doubleIndexName);
+		}
+		catch(FileNotFoundException e)
+		{
+			std::cout<< "not delete file" << std::endl;
+		}
+	}
+	else if(testNum == 3)
+	{
+		stringTests3();
+		try
+		{
+			File::remove(stringIndexName);
+		}
+		catch(FileNotFoundException e)
+		{
+			std::cout<< "not delete file" << std::endl;
+
+		}
+	}
+}
+
+void stringTests3() {
+	BTreeIndex index(relationName, stringIndexName, bufMgr, offsetof(tuple,s), STRING);
+	checkPassFail(stringScan(&index, -1000, GT, 0, LT), 0)
+	checkPassFail(stringScan(&index, 5000, GT, 6000, LT), 0)
+	checkPassFail(stringScan(&index, 4999, GTE, 6000, LTE), 1)
+}
+
+void doubleTests3() {
+	BTreeIndex index(relationName, doubleIndexName, bufMgr, offsetof(tuple,d), DOUBLE);
+	// run some tests
+	checkPassFail(doubleScan(&index,-1000, GT, 0, LT), 0)
+	checkPassFail(doubleScan(&index,5000, GT, 6000, LT), 0)
+	checkPassFail(doubleScan(&index, 4999, GTE, 6000, LTE), 1)
+
+}
+
+void intTests3() {
+	BTreeIndex index(relationName, intIndexName, bufMgr, offsetof(tuple,i), INTEGER);
+	// run some tests
+	checkPassFail(intScan(&index,-1000, GT, 0, LT), 0)
+	checkPassFail(intScan(&index,5000, GT, 6000, LT), 0)
+	checkPassFail(intScan(&index,4999, GTE, 6000, LTE), 1)
+}
+
 
 // -----------------------------------------------------------------------------
 // intTests
