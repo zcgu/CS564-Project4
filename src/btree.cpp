@@ -631,10 +631,11 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry = 0;
 			continue;
 		}
-
+		std::cout<<" Got: "<< leafNode->keyArray[nextEntry] ; //TODO:delete
 		//Do not satisfy
 		if((lowOp==GT && !biggerThan<T> (leafNode->keyArray[nextEntry], lowVal) )
-		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal)))
+		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal))
+		   )
 		{
 			nextEntry++;
 			continue;
@@ -642,11 +643,14 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 
 		if((highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
 		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) )){
-			bufMgr->unPinPage(file, currentPageNum, false);
+		//	bufMgr->unPinPage(file, currentPageNum, false);
 			throw IndexScanCompletedException();
+		//	nextEntry++;
+		//	continue;
 		}
 
-//		std::cout<<"Got: "<< std::endl <<leafNode->keyArray[nextEntry] << std::endl; //TODO:delete
+//		std::cout<<" Got: "<< leafNode->keyArray[nextEntry] ; //TODO:delete
+
 
 		//Got a record
 		outRid = leafNode->ridArray[nextEntry];
