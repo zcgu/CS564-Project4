@@ -117,10 +117,29 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a4867de84c5392d9df9cb54438dd35d38">BTreeIndex</a> (const std::string &amp;relationName, std::string &amp;outIndexName, <a class="el" href="classbadgerdb_1_1_buf_mgr.html">BufMgr</a> *bufMgrIn, const int attrByteOffset, const <a class="el" href="namespacebadgerdb.html#a9dc9c8fe64ff894720886ba4b9f81f4b">Datatype</a> attrType)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#ad6a15bba5c82d90e316dd6a1a10cc52a">~BTreeIndex</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a37ae558488f4080dfdfaf24098192cd3">insertEntry</a> (const void *key, const <a class="el" href="structbadgerdb_1_1_record_id.html">RecordId</a> rid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98df485083deefd0d6a1246206fa3c1b"></a><!-- doxytag: member="badgerdb::BTreeIndex::insertEntryRecursive" ref="a98df485083deefd0d6a1246206fa3c1b" args="(RIDKeyPair&lt; int &gt; ridKeyPair, PageId pageId, bool isLeaf, int &amp;newValue, PageId &amp;newPage)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive</b> (<a class="el" href="classbadgerdb_1_1_r_i_d_key_pair.html">RIDKeyPair</a>&lt; int &gt; ridKeyPair, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> pageId, bool isLeaf, int &amp;newValue, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> &amp;newPage)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a07d93203339de3bc3759a4a0f46838f3"></a><!-- doxytag: member="badgerdb::BTreeIndex::insertEntryRecursive" ref="a07d93203339de3bc3759a4a0f46838f3" args="(RIDKeyPair&lt; T &gt; ridKeyPair, PageId pageId, bool isLeaf, int LEAFARRAYMAX, int NONLEAFARRAYMAX, T &amp;newValue, PageId &amp;newPage)" -->
+template&lt;class T , class T1 , class T2 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertEntryRecursive</b> (<a class="el" href="classbadgerdb_1_1_r_i_d_key_pair.html">RIDKeyPair</a>&lt; T &gt; ridKeyPair, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> pageId, bool isLeaf, int LEAFARRAYMAX, int NONLEAFARRAYMAX, T &amp;newValue, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> &amp;newPage)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ac268a62a60e84c6e01683bf238848f03"></a><!-- doxytag: member="badgerdb::BTreeIndex::leafSplitHelper" ref="ac268a62a60e84c6e01683bf238848f03" args="(int pos, int last, int LEAFARRAYMAX, int NONLEAFARRAYMAX, RIDKeyPair&lt; T &gt; ridKeyPair, T1 *leafNode, PageId &amp;newPageId, T &amp;newValue)" -->
+template&lt;class T , class T1 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>leafSplitHelper</b> (int pos, int last, int LEAFARRAYMAX, int NONLEAFARRAYMAX, <a class="el" href="classbadgerdb_1_1_r_i_d_key_pair.html">RIDKeyPair</a>&lt; T &gt; ridKeyPair, T1 *leafNode, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> &amp;newPageId, T &amp;newValue)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a76eef7ba2b43501ec42ba2130b2acf15"></a><!-- doxytag: member="badgerdb::BTreeIndex::nonLeafSplitHelper" ref="a76eef7ba2b43501ec42ba2130b2acf15" args="(int pos, int NONLEAFARRAYMAX, T2 *nonLeafNode, PageId &amp;newPageId, T &amp;newValue, T &amp;newChildValue, PageId newChildPageId)" -->
+template&lt;class T , class T2 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>nonLeafSplitHelper</b> (int pos, int NONLEAFARRAYMAX, T2 *nonLeafNode, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> &amp;newPageId, T &amp;newValue, T &amp;newChildValue, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> newChildPageId)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ad5fe1347c7ff4dbe26253621deeb45cd"></a><!-- doxytag: member="badgerdb::BTreeIndex::createFirstLeaf" ref="ad5fe1347c7ff4dbe26253621deeb45cd" args="(int LEAFARRAYMAX, RIDKeyPair&lt; T &gt; ridKeyPair, T2 *nonLeafNode, PageId pageId)" -->
+template&lt;class T , class T1 , class T2 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createFirstLeaf</b> (int LEAFARRAYMAX, <a class="el" href="classbadgerdb_1_1_r_i_d_key_pair.html">RIDKeyPair</a>&lt; T &gt; ridKeyPair, T2 *nonLeafNode, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> pageId)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a1301e2f8e46e42ff0036d948e9f55a72"></a><!-- doxytag: member="badgerdb::BTreeIndex::handleNewRoot" ref="a1301e2f8e46e42ff0036d948e9f55a72" args="(T &amp;newValue, PageId newPageId, int ARRAYMAX)" -->
+template&lt;class T , class T1 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>handleNewRoot</b> (T &amp;newValue, <a class="el" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a">PageId</a> newPageId, int ARRAYMAX)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#aa0426d99197f0ad5b2054df595243437">startScan</a> (const void *lowVal, const <a class="el" href="namespacebadgerdb.html#aad50f9c7a9ef0cbcfe0b025a7aa5cb28">Operator</a> lowOp, const void *highVal, const <a class="el" href="namespacebadgerdb.html#aad50f9c7a9ef0cbcfe0b025a7aa5cb28">Operator</a> highOp)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a0d7a72f11061c8b5abe36527a36d0d5b"></a><!-- doxytag: member="badgerdb::BTreeIndex::startScanHelper" ref="a0d7a72f11061c8b5abe36527a36d0d5b" args="(T lowValParm, T highValParm, int ARRAYMAX)" -->
+template&lt;class T , class T1 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>startScanHelper</b> (T lowValParm, T highValParm, int ARRAYMAX)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a0834ba4655cac7af31ce1b8f2f18f0e1">scanNext</a> (<a class="el" href="structbadgerdb_1_1_record_id.html">RecordId</a> &amp;outRid)</td></tr>
+<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ae0be8f5ac399a2e35cc561cc4b78e2ff"></a><!-- doxytag: member="badgerdb::BTreeIndex::scanNextHelper" ref="ae0be8f5ac399a2e35cc561cc4b78e2ff" args="(RecordId &amp;outRid, T lowVal, T highVal, int ARRAYMAX)" -->
+template&lt;class T , class T1 &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>scanNextHelper</b> (<a class="el" href="structbadgerdb_1_1_record_id.html">RecordId</a> &amp;outRid, T lowVal, T highVal, int ARRAYMAX)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a78093b184e3ed6faf6edd8e90010583b">endScan</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -188,7 +207,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00030">30</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00032">32</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
   std::ostringstream idxStr;
   idxStr &lt;&lt; relationName &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; attrByteOffset;
@@ -197,6 +216,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   this-&gt;bufMgr = bufMgrIn;
   this-&gt;attrByteOffset = attrByteOffset;
   this-&gt;attributeType = attrType;
+  scanExecuting = <span class="keyword">false</span>;
+  leafOccupancy = 0;
+  nodeOccupancy = 0;
 
   <span class="keywordflow">try</span>{
     <span class="comment">//metadata page</span>
@@ -204,32 +226,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
     Page* page;
     bufMgrIn-&gt;allocPage(file, headerPageNum, page);
     IndexMetaInfo* indexMetaInfo = (IndexMetaInfo*) page;
-    indexMetaInfo-&gt;rootPageNo = rootPageNum;
     indexMetaInfo-&gt;attrByteOffset = attrByteOffset;
     indexMetaInfo-&gt;attrType = attrType;
     strcpy(indexMetaInfo-&gt;relationName, relationName.c_str());
-    bufMgrIn-&gt;unPinPage(file, headerPageNum, <span class="keyword">true</span>);
-
     <span class="comment">//root page</span>
     bufMgrIn-&gt;allocPage(file, rootPageNum, page);
-    <span class="keywordflow">switch</span> (attrType) {
-      <span class="keywordflow">case</span> INTEGER: {
-        NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
-        nonLeafNodeInt-&gt;level = 1;
-        <span class="keywordflow">break</span>;
-      }
-      <span class="keywordflow">case</span> DOUBLE: {
-        NonLeafNodeDouble *nonLeafNodeDouble = (NonLeafNodeDouble *) page;
-        nonLeafNodeDouble-&gt;level = 1;
-        <span class="keywordflow">break</span>;
-      }
-      <span class="keywordflow">case</span> STRING: {
-        NonLeafNodeString *nonLeafNodeString = (NonLeafNodeString *) page;
-        nonLeafNodeString-&gt;level = 1;
-        <span class="keywordflow">break</span>;
-      }
-      <span class="keywordflow">default</span>:
-        <span class="keywordflow">break</span>;
+    indexMetaInfo-&gt;rootPageNo = rootPageNum;
+    bufMgrIn-&gt;unPinPage(file, headerPageNum, <span class="keyword">true</span>);
+
+    <span class="keywordflow">if</span>(attributeType == INTEGER){
+      NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
+      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="namespacebadgerdb.html#a66dbd0723b61fad437f949419e08e200" title="Number of key slots in B+Tree non-leaf for INTEGER key.">INTARRAYNONLEAFSIZE</a>;i++) nonLeafNodeInt-&gt;pageNoArray[i] = 0;
+      nonLeafNodeInt-&gt;level = 1;
+    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(attributeType == DOUBLE){
+      NonLeafNodeDouble *nonLeafNodeDouble = (NonLeafNodeDouble *) page;
+      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="namespacebadgerdb.html#a8f8504df0c1f50500c005668cec89eb0" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYNONLEAFSIZE</a>;i++) nonLeafNodeDouble-&gt;pageNoArray[i] = 0;
+      nonLeafNodeDouble-&gt;level = 1;
+    } <span class="keywordflow">else</span> {
+      NonLeafNodeString *nonLeafNodeString = (NonLeafNodeString *) page;
+      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="namespacebadgerdb.html#a2eaecf77b111d267b4f0f5470942a958" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYNONLEAFSIZE</a>;i++) nonLeafNodeString-&gt;pageNoArray[i] = 0;
+      nonLeafNodeString-&gt;level = 1;
     }
     bufMgrIn-&gt;unPinPage(file, rootPageNum, <span class="keyword">true</span>);
 
@@ -239,7 +255,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
     <span class="keywordflow">while</span>(1)
     {
       fscan.scanNext(scanRid);
-      <a class="code" href="classbadgerdb_1_1_b_tree_index.html#a37ae558488f4080dfdfaf24098192cd3">insertEntry</a>((<span class="keywordtype">void</span> *) fscan.getRecord().c_str() + attrByteOffset, scanRid);  <span class="comment">//TODO:?</span>
+      <a class="code" href="classbadgerdb_1_1_b_tree_index.html#a37ae558488f4080dfdfaf24098192cd3">insertEntry</a>((<span class="keywordtype">void</span> *) fscan.getRecord().c_str() + attrByteOffset, scanRid);
     }
   }
   <span class="keywordflow">catch</span> (FileExistsException e){
@@ -252,15 +268,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
     <span class="comment">//check</span>
     <span class="keywordflow">if</span>(indexMetaInfo-&gt;attrByteOffset != attrByteOffset
        || indexMetaInfo-&gt;attrType != attrType
-       || !strcmp(indexMetaInfo-&gt;relationName, relationName.c_str()))
+       || strcmp(indexMetaInfo-&gt;relationName, relationName.c_str()) != 0
+        ){
+      bufMgrIn-&gt;unPinPage(file, headerPageNum, <span class="keyword">false</span>);
       <span class="keywordflow">throw</span> BadIndexInfoException(<span class="stringliteral">&quot;constructor parameters do not match exist index file&quot;</span>);
+    }
 
     this-&gt;rootPageNum = indexMetaInfo-&gt;rootPageNo;
     bufMgrIn-&gt;unPinPage(file, headerPageNum, <span class="keyword">false</span>);
+
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Finish Read index file &quot;</span>
+    &lt;&lt; <span class="stringliteral">&quot; hearpage: &quot;</span> &lt;&lt; headerPageNum &lt;&lt; <span class="stringliteral">&quot; rootpage: &quot;</span> &lt;&lt; rootPageNum&lt;&lt; std::endl; <span class="comment">//TODO: delete</span>
   }
   <span class="keywordflow">catch</span> (EndOfFileException e){
-    std::cout &lt;&lt; <span class="stringliteral">&quot;Finish Read all records //Gu&quot;</span>
-    &lt;&lt; <span class="stringliteral">&quot;hearpage: &quot;</span> &lt;&lt; headerPageNum &lt;&lt; <span class="stringliteral">&quot;rootpage:&quot;</span> &lt;&lt; rootPageNum&lt;&lt; std::endl; <span class="comment">//TODO: delete</span>
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Finish Read all records &quot;</span>
+    &lt;&lt; <span class="stringliteral">&quot; hearpage: &quot;</span> &lt;&lt; headerPageNum &lt;&lt; <span class="stringliteral">&quot; rootpage: &quot;</span> &lt;&lt; rootPageNum&lt;&lt; std::endl; <span class="comment">//TODO: delete</span>
   }
 }
 </pre></div>
@@ -281,8 +303,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
 <div class="memdoc">
 <p><a class="el" href="classbadgerdb_1_1_b_tree_index.html" title="BTreeIndex class. It implements a B+ Tree index on a single attribute of a relation. This index supports only one scan at a time.">BTreeIndex</a> Destructor. End any initialized scan, flush index file, after unpinning any pinned pages, from the buffer manager and delete file instance thereby closing the index file. Destructor should not throw any exceptions. All exceptions should be caught in here itself. </p>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00115">115</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00120">120</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
+  scanExecuting = <span class="keyword">false</span>;
+
+  <span class="keywordflow">try</span> {
+    bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
+  } <span class="keywordflow">catch</span> (PageNotPinnedException e) {
+  }
+
+  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#acc61d1985720411ebb76e70f702827d3">flushFile</a>(file);
+  file-&gt;<a class="code" href="classbadgerdb_1_1_file.html#a97fd6e3ae8dd11be883289b69d560287">~File</a>();
 }
 </pre></div>
 </div>
@@ -309,10 +340,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00545">545</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00674">674</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
+  <span class="keywordflow">if</span>(scanExecuting == <span class="keyword">false</span>)
+    <span class="keywordflow">throw</span> ScanNotInitializedException();
   scanExecuting = <span class="keyword">false</span>;
-  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
+
+  <span class="keywordflow">try</span> {
+    bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
+  } <span class="keywordflow">catch</span> (PageNotPinnedException e) {
+  }
+
+<span class="comment">//  bufMgr-&gt;flushFile(file);</span>
 }
 </pre></div>
 </div>
@@ -350,54 +389,56 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00406">406</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00468">468</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  Page *page;
-  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#a9f853f0f1d4628e7e14374d0c7c6a4f3">readPage</a>(file, rootPageNum, page);
-  <span class="keywordflow">switch</span> (attributeType){
-    <span class="keywordflow">case</span> INTEGER:{
-      RIDKeyPair&lt;int &gt; ridKeyPair;
-      ridKeyPair.set(rid, *((<span class="keywordtype">int</span> *) key));
-      <span class="keywordtype">int</span> newValue;
-      <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageId = 0;
-      insertEntryRecursive(ridKeyPair, rootPageNum, 0, newValue, newPageId);
 
-      <span class="comment">//if root got split</span>
-      <span class="keywordflow">if</span>(newPageId != 0){
-        <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newRootPageId;
-        Page* newRootPage;
-        bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#ab9ae3b12aac55b119b5763e3de2a4d2b">allocPage</a>(file, newRootPageId, newRootPage);
-        NonLeafNodeInt* newRootNonLeafNodeInt = (NonLeafNodeInt*) page;
-        newRootNonLeafNodeInt-&gt;keyArray[0] = newValue;
-        newRootNonLeafNodeInt-&gt;pageNoArray[0] = rootPageNum;
-        newRootNonLeafNodeInt-&gt;pageNoArray[1] = newPageId;
-        newRootNonLeafNodeInt-&gt;level = 0;
-        rootPageNum = newRootPageId;
-        bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, newRootPageId, <span class="keyword">true</span>);
-      }
-    }
-    <span class="keywordflow">case</span> DOUBLE:{
-      RIDKeyPair&lt;double &gt; ridKeyPair;
-      ridKeyPair.set(rid, *((<span class="keywordtype">double</span> *) key));
-      <span class="keywordtype">double</span> newValue;
-      <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageId = 0;
-<span class="comment">//      insertEntryRecursive(ridKeyPair, rootPageNum, 0, newValue, newPageId);</span>
-      <span class="comment">//TODO: root split</span>
+  <span class="keywordflow">if</span>(attributeType == INTEGER) {
 
-    }
-    <span class="keywordflow">case</span> STRING:{
-      RIDKeyPair&lt;char[STRINGSIZE] &gt; ridKeyPair;
-      strncpy(ridKeyPair.key, (<span class="keywordtype">char</span>*) key, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>);
-      ridKeyPair.rid = rid;
-      <span class="keywordtype">char</span> newValue[<a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>];
-      <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageId = 0;
-<span class="comment">//      insertEntryRecursive(ridKeyPair, rootPageNum, 0, newValue, newPageId);</span>
-      <span class="comment">//TODO: root split</span>
+    RIDKeyPair&lt;int&gt; ridKeyPairInt;
+    ridKeyPairInt.set(rid, *((<span class="keywordtype">int</span> *) key));
+    <span class="keywordtype">int</span> newValueInt;
+    <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageIdInt = 0;
 
+    <span class="comment">//call recursive function</span>
+    insertEntryRecursive&lt;int, LeafNodeInt, NonLeafNodeInt&gt;
+        (ridKeyPairInt, rootPageNum, 0, <a class="code" href="namespacebadgerdb.html#a2195ac9af2c5aa506d1b6ca42ac503f9" title="Number of key slots in B+Tree leaf for INTEGER key.">INTARRAYLEAFSIZE</a>, <a class="code" href="namespacebadgerdb.html#a66dbd0723b61fad437f949419e08e200" title="Number of key slots in B+Tree non-leaf for INTEGER key.">INTARRAYNONLEAFSIZE</a>, newValueInt, newPageIdInt);
 
-    }
+    <span class="comment">//if root got split</span>
+    <span class="keywordflow">if</span> (newPageIdInt != 0)
+      handleNewRoot&lt;int, NonLeafNodeInt&gt;(newValueInt, newPageIdInt, <a class="code" href="namespacebadgerdb.html#a66dbd0723b61fad437f949419e08e200" title="Number of key slots in B+Tree non-leaf for INTEGER key.">INTARRAYNONLEAFSIZE</a>);
+  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributeType == DOUBLE) {
+
+    RIDKeyPair&lt;double&gt; ridKeyPairDouble;
+    ridKeyPairDouble.set(rid, *((<span class="keywordtype">double</span> *) key));
+    <span class="keywordtype">double</span> newValueDouble;
+    <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageIdDouble = 0;
+
+    <span class="comment">//call recursive function</span>
+    insertEntryRecursive&lt;double, LeafNodeDouble, NonLeafNodeDouble&gt;
+        (ridKeyPairDouble, rootPageNum, 0, <a class="code" href="namespacebadgerdb.html#a44fb31ade663da7f524be05ce3f1871b" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYLEAFSIZE</a>, <a class="code" href="namespacebadgerdb.html#a8f8504df0c1f50500c005668cec89eb0" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYNONLEAFSIZE</a>, newValueDouble, newPageIdDouble);
+
+    <span class="comment">//if root got split</span>
+    <span class="keywordflow">if</span> (newPageIdDouble != 0)
+      handleNewRoot&lt;double, NonLeafNodeDouble&gt;(newValueDouble, newPageIdDouble, <a class="code" href="namespacebadgerdb.html#a8f8504df0c1f50500c005668cec89eb0" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYNONLEAFSIZE</a>);
+
+  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributeType == STRING){
+
+    RIDKeyPair&lt;char[STRINGSIZE] &gt; ridKeyPairString;
+    ridKeyPairString.rid = rid;
+    strncpy(ridKeyPairString.key, (<span class="keywordtype">char</span>*) key, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>);
+    <span class="comment">//ridKeyPairString.key[STRINGSIZE - 1] = &#39;\0&#39;;</span>
+    <span class="keywordtype">char</span> newValue[<a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>];
+    <a class="code" href="namespacebadgerdb.html#a1f49e404293bf4240756b89b53b1587a" title="Identifier for a page in a file.">PageId</a> newPageId = 0;
+
+    <span class="comment">//call recursive function</span>
+    insertEntryRecursive&lt;char[STRINGSIZE], LeafNodeString, NonLeafNodeString&gt;
+        (ridKeyPairString, rootPageNum, 0, <a class="code" href="namespacebadgerdb.html#a13948efcab340128bf8b64a1e292c029" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYLEAFSIZE</a>, <a class="code" href="namespacebadgerdb.html#a2eaecf77b111d267b4f0f5470942a958" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYNONLEAFSIZE</a>, newValue, newPageId);
+
+    <span class="comment">//if root got split</span>
+    <span class="keywordflow">if</span> (newPageId != 0)
+      handleNewRoot&lt;char[STRINGSIZE], NonLeafNodeString&gt;(newValue, newPageId, <a class="code" href="namespacebadgerdb.html#a2eaecf77b111d267b4f0f5470942a958" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYNONLEAFSIZE</a>);
+
   }
-
 
 }
 </pre></div>
@@ -432,41 +473,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00504">504</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00609">609</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  <span class="keywordflow">switch</span> (attributeType){
-    <span class="keywordflow">case</span> INTEGER:{
-      LeafNodeInt* leafNodeInt;
-      <span class="keywordflow">while</span>(1){
-        leafNodeInt = (LeafNodeInt*) currentPageData;
-        <span class="keywordflow">if</span>(leafNodeInt-&gt;ridArray[nextEntry].page_number == 0
-            || nextEntry == <a class="code" href="namespacebadgerdb.html#a2195ac9af2c5aa506d1b6ca42ac503f9" title="Number of key slots in B+Tree leaf for INTEGER key.">INTARRAYLEAFSIZE</a>) {
-          bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
+  <span class="keywordflow">if</span>(scanExecuting == <span class="keyword">false</span>)
+    <span class="keywordflow">throw</span> ScanNotInitializedException();
 
-          currentPageNum = leafNodeInt-&gt;rightSibPageNo;
-          <span class="keywordflow">if</span>(currentPageNum == 0)
-            <span class="keywordflow">throw</span> IndexScanCompletedException();
-
-          std::cout&lt;&lt;<span class="stringliteral">&quot;scan next try to read page&quot;</span>&lt;&lt;currentPageNum;
-          bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#a9f853f0f1d4628e7e14374d0c7c6a4f3">readPage</a>(file, currentPageNum, currentPageData);
-          <span class="keywordflow">continue</span>;
-        }
-
-        <span class="keywordflow">if</span>((lowOp==GT &amp;&amp; leafNodeInt-&gt;keyArray[nextEntry] &lt;= lowValInt)
-            || (lowOp==GTE &amp;&amp; leafNodeInt-&gt;keyArray[nextEntry] &lt; lowValInt)
-            || (highOp==LT &amp;&amp; leafNodeInt-&gt;keyArray[nextEntry] &gt;= highValInt)
-            || (highOp==LTE &amp;&amp; leafNodeInt-&gt;keyArray[nextEntry] &gt; highValInt))
-        {
-          nextEntry++;
-          <span class="keywordflow">continue</span>;
-        }
-
-        outRid = leafNodeInt-&gt;ridArray[nextEntry];
-        nextEntry++;
-        return ;
-      }
-    }
-  }
+  <span class="keywordflow">if</span>(attributeType == INTEGER)
+    scanNextHelper&lt;int, LeafNodeInt&gt; (outRid, lowValInt, highValInt, <a class="code" href="namespacebadgerdb.html#a2195ac9af2c5aa506d1b6ca42ac503f9" title="Number of key slots in B+Tree leaf for INTEGER key.">INTARRAYLEAFSIZE</a>);
+  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributeType == DOUBLE)
+    scanNextHelper&lt;double, LeafNodeDouble&gt; (outRid, lowValDouble, highValDouble, <a class="code" href="namespacebadgerdb.html#a44fb31ade663da7f524be05ce3f1871b" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYLEAFSIZE</a>);
+  <span class="keywordflow">else</span>
+    scanNextHelper&lt;char[STRINGSIZE], LeafNodeString&gt; (outRid, lowValChar, highValChar, <a class="code" href="namespacebadgerdb.html#a13948efcab340128bf8b64a1e292c029" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYLEAFSIZE</a>);
 }
 </pre></div>
 </div>
@@ -526,40 +543,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00461">461</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
+<p>Definition at line <a class="el" href="btree_8cpp_source.html#l00525">525</a> of file <a class="el" href="btree_8cpp_source.html">btree.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
   scanExecuting = <span class="keyword">true</span>;
-
-  <span class="keywordflow">switch</span> (attributeType) {
-    <span class="keywordflow">case</span> INTEGER:{
-      this-&gt;lowOp = lowOpParm;
-      this-&gt;highOp = highOpParm;
-      this-&gt;lowValInt = *((<span class="keywordtype">int</span>*) lowValParm);
-      this-&gt;highValInt = *((<span class="keywordtype">int</span> *) highValParm);
-    }
+  <span class="keywordflow">if</span> (lowOpParm != GT &amp;&amp; lowOpParm !=GTE ){
+    <span class="keywordflow">throw</span> BadOpcodesException();
+  }
+  <span class="keywordflow">if</span>(highOpParm != LT &amp;&amp; highOpParm != LTE){
+    <span class="keywordflow">throw</span> BadOpcodesException();
   }
 
-  <span class="comment">//find first one</span>
-  currentPageNum = rootPageNum;
-  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#a9f853f0f1d4628e7e14374d0c7c6a4f3">readPage</a>(file, currentPageNum, currentPageData);
-  std::cout&lt;&lt; <span class="stringliteral">&quot;start scan, open rootpage&quot;</span>&lt;&lt; std::endl;  <span class="comment">//TODO:delete</span>
-  NonLeafNodeInt* nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
+  this-&gt;lowOp = lowOpParm;
+  this-&gt;highOp = highOpParm;
 
-  <span class="keywordflow">while</span>(nonLeafNodeInt-&gt;level != 1) {
-    bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#a9f853f0f1d4628e7e14374d0c7c6a4f3">readPage</a>(file, nonLeafNodeInt-&gt;pageNoArray[0], currentPageData);
-    bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
-    currentPageNum = nonLeafNodeInt-&gt;pageNoArray[0];
-    nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
+  <span class="keywordflow">if</span>(attributeType == INTEGER) {
+    this-&gt;lowValInt = *((<span class="keywordtype">int</span>*) lowValParm);
+    this-&gt;highValInt = *((<span class="keywordtype">int</span> *) highValParm);
+    startScanHelper&lt;int, NonLeafNodeInt&gt;(*((<span class="keywordtype">int</span>*) lowValParm), *((<span class="keywordtype">int</span> *) highValParm), <a class="code" href="namespacebadgerdb.html#a66dbd0723b61fad437f949419e08e200" title="Number of key slots in B+Tree non-leaf for INTEGER key.">INTARRAYNONLEAFSIZE</a>);
+  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributeType == DOUBLE) {
+    this-&gt;lowValDouble = *((<span class="keywordtype">double</span>*) lowValParm);
+    this-&gt;highValDouble = *((<span class="keywordtype">double</span> *) highValParm);
+    startScanHelper&lt;double , NonLeafNodeDouble&gt;(*((<span class="keywordtype">double</span> *) lowValParm), *((<span class="keywordtype">double</span> *) highValParm), <a class="code" href="namespacebadgerdb.html#a8f8504df0c1f50500c005668cec89eb0" title="Number of key slots in B+Tree leaf for DOUBLE key.">DOUBLEARRAYNONLEAFSIZE</a>);
+  } <span class="keywordflow">else</span> {
+    strncpy((<span class="keywordtype">char</span>*) this-&gt;lowValString.c_str(), (<span class="keywordtype">char</span> *)lowValParm, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>-1);
+    strncpy(lowValChar, (<span class="keywordtype">char</span> *)lowValParm, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>);
+    <span class="comment">//lowValChar[STRINGSIZE - 1] = &#39;\0&#39;;</span>
+    strncpy((<span class="keywordtype">char</span>*) this-&gt;highValString.c_str(), (<span class="keywordtype">char</span> *)highValParm, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>-1);
+    strncpy(highValChar, (<span class="keywordtype">char</span> *)highValParm, <a class="code" href="namespacebadgerdb.html#a963f341a4f5c2c97cc2e4ffc7b0aa459" title="Size of String key.">STRINGSIZE</a>);
+    <span class="comment">//highValChar[STRINGSIZE - 1] = &#39;\0&#39;;</span>
+
+    std::cout&lt;&lt; <span class="stringliteral">&quot;Start scan finish, lowValChar: &quot;</span>&lt;&lt; lowValChar &lt;&lt;<span class="stringliteral">&quot; highValChar: &quot;</span>&lt;&lt; highValChar&lt;&lt;std::endl;
+    startScanHelper&lt;char[STRINGSIZE], NonLeafNodeString&gt; (lowValChar, highValChar, <a class="code" href="namespacebadgerdb.html#a2eaecf77b111d267b4f0f5470942a958" title="Number of key slots in B+Tree leaf for STRING key.">STRINGARRAYNONLEAFSIZE</a>);
   }
-  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#a9f853f0f1d4628e7e14374d0c7c6a4f3">readPage</a>(file, nonLeafNodeInt-&gt;pageNoArray[0], currentPageData);
-  bufMgr-&gt;<a class="code" href="classbadgerdb_1_1_buf_mgr.html#aa9bdf04c8543f59744db22efa9420c89">unPinPage</a>(file, currentPageNum, <span class="keyword">false</span>);
-  currentPageNum = nonLeafNodeInt-&gt;pageNoArray[0];
-  nonLeafNodeInt = (NonLeafNodeInt*) currentPageData;
 
-  nextEntry = 0;
-
-  std::cout&lt;&lt; <span class="stringliteral">&quot;start scan complete&quot;</span> &lt;&lt; std::endl
-  &lt;&lt;<span class="stringliteral">&quot;current page:&quot;</span>&lt;&lt;currentPageNum &lt;&lt; std::endl; <span class="comment">//TODO:delete</span>
 }
 </pre></div>
 </div>
@@ -586,7 +602,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insertEntryRecursive<
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 2 2015 22:13:54 for BadgerDB by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 6 2015 16:05:27 for BadgerDB by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
