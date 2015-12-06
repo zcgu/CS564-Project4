@@ -90,11 +90,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 This is the complete list of members for <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a4867de84c5392d9df9cb54438dd35d38">BTreeIndex</a>(const std::string &amp;relationName, std::string &amp;outIndexName, BufMgr *bufMgrIn, const int attrByteOffset, const Datatype attrType)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>createFirstLeaf</b>(int LEAFARRAYMAX, RIDKeyPair&lt; T &gt; ridKeyPair, T2 *nonLeafNode, PageId pageId) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a78093b184e3ed6faf6edd8e90010583b">endScan</a>()</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>handleNewRoot</b>(T &amp;newValue, PageId newPageId, int ARRAYMAX) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a37ae558488f4080dfdfaf24098192cd3">insertEntry</a>(const void *key, const RecordId rid)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>insertEntryRecursive</b>(RIDKeyPair&lt; int &gt; ridKeyPair, PageId pageId, bool isLeaf, int &amp;newValue, PageId &amp;newPage) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>insertEntryRecursive</b>(RIDKeyPair&lt; T &gt; ridKeyPair, PageId pageId, bool isLeaf, int LEAFARRAYMAX, int NONLEAFARRAYMAX, T &amp;newValue, PageId &amp;newPage) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>leafSplitHelper</b>(int pos, int last, int LEAFARRAYMAX, int NONLEAFARRAYMAX, RIDKeyPair&lt; T &gt; ridKeyPair, T1 *leafNode, PageId &amp;newPageId, T &amp;newValue) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>nonLeafSplitHelper</b>(int pos, int NONLEAFARRAYMAX, T2 *nonLeafNode, PageId &amp;newPageId, T &amp;newValue, T &amp;newChildValue, PageId newChildPageId) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#a0834ba4655cac7af31ce1b8f2f18f0e1">scanNext</a>(RecordId &amp;outRid)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>scanNextHelper</b>(RecordId &amp;outRid, T lowVal, T highVal, int ARRAYMAX) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#aa0426d99197f0ad5b2054df595243437">startScan</a>(const void *lowVal, const Operator lowOp, const void *highVal, const Operator highOp)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>startScanHelper</b>(T lowValParm, T highValParm, int ARRAYMAX) (defined in <a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a>)</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html#ad6a15bba5c82d90e316dd6a1a10cc52a">~BTreeIndex</a>()</td><td><a class="el" href="classbadgerdb_1_1_b_tree_index.html">badgerdb::BTreeIndex</a></td><td></td></tr>
 </table></div><!-- contents -->
 <!-- window showing the filter options -->
@@ -114,7 +120,7 @@ This is the complete list of members for <a class="el" href="classbadgerdb_1_1_b
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 2 2015 22:13:54 for BadgerDB by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 6 2015 16:05:27 for BadgerDB by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -737,7 +737,7 @@ void errorTests()
 	}
 
   file1 = new PageFile(relationName, true);
-	
+
   // initialize all of record1.s to keep purify happy
   memset(record1.s, ' ', sizeof(record1.s));
 	PageId new_page_number;
@@ -769,7 +769,7 @@ void errorTests()
 	file1->writePage(new_page_number, new_page);
 
   BTreeIndex index(relationName, intIndexName, bufMgr, offsetof(tuple,i), INTEGER);
-	
+
 	int int2 = 2;
 	int int5 = 5;
 

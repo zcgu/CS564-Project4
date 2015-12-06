@@ -124,6 +124,7 @@ BTreeIndex::~BTreeIndex()
 	try {
 		bufMgr->unPinPage(file, currentPageNum, false);
 	} catch (PageNotPinnedException e) {
+	} catch (HashNotFoundException e) {
 	}
 
 	bufMgr->flushFile(file);
@@ -680,6 +681,7 @@ const void BTreeIndex::endScan()
 	try {
 		bufMgr->unPinPage(file, currentPageNum, false);
 	} catch (PageNotPinnedException e) {
+	} catch (HashNotFoundException e) {
 	}
 
 //	bufMgr->flushFile(file);

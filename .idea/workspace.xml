@@ -11,15 +11,215 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="Version 2.0">
+    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="$PROJECT_DIR$/src/badgerdb_main" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/exceptions.a" afterPath="$PROJECT_DIR$/src/lib/exceptions.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="$PROJECT_DIR$/src/obj/btree.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="$PROJECT_DIR$/src/obj/main.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/search/classes_69.html" afterPath="$PROJECT_DIR$/docs/search/classes_69.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/annotated.html" afterPath="$PROJECT_DIR$/docs/annotated.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__buffer__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/bad__buffer__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__buffer__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/bad__buffer__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__index__info__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/bad__index__info__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__index__info__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/bad__index__info__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__opcodes__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/bad__opcodes__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__opcodes__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/bad__opcodes__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__scan__param__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/bad__scan__param__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__scan__param__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/bad__scan__param__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__scanrange__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/bad__scanrange__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/bad__scanrange__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/bad__scanrange__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/badgerdb__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/badgerdb__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/badgerdb__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/badgerdb__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/btree_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/btree_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/btree_8h_source.html" afterPath="$PROJECT_DIR$/docs/btree_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buf_hash_tbl_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/buf_hash_tbl_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buf_hash_tbl_8h_source.html" afterPath="$PROJECT_DIR$/docs/buf_hash_tbl_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buffer_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/buffer_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buffer_8h_source.html" afterPath="$PROJECT_DIR$/docs/buffer_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buffer__exceeded__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/buffer__exceeded__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/buffer__exceeded__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/buffer__exceeded__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_b_tree_index-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_b_tree_index-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_b_tree_index.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_b_tree_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_buffer_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_buffer_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_buffer_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_buffer_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_index_info_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_index_info_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_index_info_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_index_info_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_opcodes_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_opcodes_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_opcodes_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_opcodes_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scan_param_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scan_param_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scan_param_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scan_param_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scanrange_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scanrange_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scanrange_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_bad_scanrange_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_badger_db_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_badger_db_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_badger_db_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_badger_db_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_blob_file-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_blob_file-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_blob_file.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_blob_file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_desc-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_desc-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_desc.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_desc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_hash_tbl-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_hash_tbl-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_hash_tbl.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_hash_tbl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_mgr-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_mgr-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_mgr.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buf_mgr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buffer_exceeded_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buffer_exceeded_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buffer_exceeded_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_buffer_exceeded_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_end_of_file_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_end_of_file_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_end_of_file_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_end_of_file_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_exists_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_exists_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_exists_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_exists_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_iterator-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_iterator-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_iterator.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_iterator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_not_found_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_not_found_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_not_found_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_not_found_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_open_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_open_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_open_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_open_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_scan-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_scan-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_scan.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_file_scan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_already_present_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_already_present_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_already_present_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_already_present_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_not_found_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_not_found_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_not_found_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_not_found_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_table_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_table_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_table_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_hash_table_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_index_scan_completed_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_index_scan_completed_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_index_scan_completed_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_index_scan_completed_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_insufficient_space_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_insufficient_space_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_insufficient_space_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_insufficient_space_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_page_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_page_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_page_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_page_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_record_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_record_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_record_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_record_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_slot_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_slot_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_slot_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_invalid_slot_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_no_such_key_found_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_no_such_key_found_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_no_such_key_found_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_no_such_key_found_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_file-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_file-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_file.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_iterator-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_iterator-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_iterator.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_iterator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_key_pair-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_key_pair-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_key_pair.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_key_pair.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_not_pinned_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_not_pinned_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_not_pinned_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_not_pinned_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_pinned_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_pinned_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_pinned_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_page_pinned_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_r_i_d_key_pair-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_r_i_d_key_pair-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_r_i_d_key_pair.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_r_i_d_key_pair.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_scan_not_initialized_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_scan_not_initialized_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_scan_not_initialized_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_scan_not_initialized_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_slot_in_use_exception-members.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_slot_in_use_exception-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classbadgerdb_1_1_slot_in_use_exception.html" afterPath="$PROJECT_DIR$/docs/classbadgerdb_1_1_slot_in_use_exception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/classes.html" afterPath="$PROJECT_DIR$/docs/classes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/end__of__file__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/end__of__file__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/end__of__file__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/end__of__file__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/file_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file_8h_source.html" afterPath="$PROJECT_DIR$/docs/file_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__exists__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/file__exists__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__exists__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/file__exists__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__iterator_8h_source.html" afterPath="$PROJECT_DIR$/docs/file__iterator_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__not__found__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/file__not__found__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__not__found__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/file__not__found__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__open__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/file__open__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/file__open__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/file__open__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/files.html" afterPath="$PROJECT_DIR$/docs/files.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/filescan_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/filescan_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/filescan_8h_source.html" afterPath="$PROJECT_DIR$/docs/filescan_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions.html" afterPath="$PROJECT_DIR$/docs/functions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x62.html" afterPath="$PROJECT_DIR$/docs/functions_0x62.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x63.html" afterPath="$PROJECT_DIR$/docs/functions_0x63.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x64.html" afterPath="$PROJECT_DIR$/docs/functions_0x64.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x65.html" afterPath="$PROJECT_DIR$/docs/functions_0x65.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x66.html" afterPath="$PROJECT_DIR$/docs/functions_0x66.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x67.html" afterPath="$PROJECT_DIR$/docs/functions_0x67.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x68.html" afterPath="$PROJECT_DIR$/docs/functions_0x68.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x69.html" afterPath="$PROJECT_DIR$/docs/functions_0x69.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x6b.html" afterPath="$PROJECT_DIR$/docs/functions_0x6b.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x6c.html" afterPath="$PROJECT_DIR$/docs/functions_0x6c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x6d.html" afterPath="$PROJECT_DIR$/docs/functions_0x6d.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x6e.html" afterPath="$PROJECT_DIR$/docs/functions_0x6e.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x6f.html" afterPath="$PROJECT_DIR$/docs/functions_0x6f.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x70.html" afterPath="$PROJECT_DIR$/docs/functions_0x70.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x72.html" afterPath="$PROJECT_DIR$/docs/functions_0x72.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x73.html" afterPath="$PROJECT_DIR$/docs/functions_0x73.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x75.html" afterPath="$PROJECT_DIR$/docs/functions_0x75.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x76.html" afterPath="$PROJECT_DIR$/docs/functions_0x76.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x77.html" afterPath="$PROJECT_DIR$/docs/functions_0x77.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_0x7e.html" afterPath="$PROJECT_DIR$/docs/functions_0x7e.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_func.html" afterPath="$PROJECT_DIR$/docs/functions_func.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_rela.html" afterPath="$PROJECT_DIR$/docs/functions_rela.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/functions_vars.html" afterPath="$PROJECT_DIR$/docs/functions_vars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__already__present__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/hash__already__present__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__already__present__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/hash__already__present__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__not__found__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/hash__not__found__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__not__found__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/hash__not__found__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__table__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/hash__table__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hash__table__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/hash__table__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/hierarchy.html" afterPath="$PROJECT_DIR$/docs/hierarchy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index__scan__completed__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/index__scan__completed__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index__scan__completed__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/index__scan__completed__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/insufficient__space__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/insufficient__space__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/insufficient__space__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/insufficient__space__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__page__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/invalid__page__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__page__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/invalid__page__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__record__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/invalid__record__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__record__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/invalid__record__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__slot__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/invalid__slot__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/invalid__slot__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/invalid__slot__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/main_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/main_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/main_8hpp_source.html" afterPath="$PROJECT_DIR$/docs/main_8hpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacebadgerdb.html" afterPath="$PROJECT_DIR$/docs/namespacebadgerdb.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacemembers.html" afterPath="$PROJECT_DIR$/docs/namespacemembers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacemembers_enum.html" afterPath="$PROJECT_DIR$/docs/namespacemembers_enum.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacemembers_func.html" afterPath="$PROJECT_DIR$/docs/namespacemembers_func.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacemembers_type.html" afterPath="$PROJECT_DIR$/docs/namespacemembers_type.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespacemembers_vars.html" afterPath="$PROJECT_DIR$/docs/namespacemembers_vars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/namespaces.html" afterPath="$PROJECT_DIR$/docs/namespaces.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/no__such__key__found__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/no__such__key__found__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/no__such__key__found__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/no__such__key__found__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/page_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page_8h_source.html" afterPath="$PROJECT_DIR$/docs/page_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page__iterator_8h_source.html" afterPath="$PROJECT_DIR$/docs/page__iterator_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page__not__pinned__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/page__not__pinned__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page__not__pinned__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/page__not__pinned__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page__pinned__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/page__pinned__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/page__pinned__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/page__pinned__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/scan__not__initialized__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/scan__not__initialized__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/scan__not__initialized__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/scan__not__initialized__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/slot__in__use__exception_8cpp_source.html" afterPath="$PROJECT_DIR$/docs/slot__in__use__exception_8cpp_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/slot__in__use__exception_8h_source.html" afterPath="$PROJECT_DIR$/docs/slot__in__use__exception_8h_source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_buf_stats-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_buf_stats-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_buf_stats.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_buf_stats.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_file_header-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_file_header-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_file_header.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_file_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_index_meta_info-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_index_meta_info-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_index_meta_info.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_index_meta_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_double-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_double-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_double.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_double.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_int-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_int-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_int.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_int.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_string-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_string-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_string.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_leaf_node_string.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_double-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_double-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_double.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_double.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_int-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_int-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_int.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_int.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_string-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_string-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_string.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_non_leaf_node_string.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_header-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_header-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_header.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_slot-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_slot-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_slot.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_page_slot.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_record_id-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_record_id-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1_record_id.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1_record_id.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1hash_bucket-members.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1hash_bucket-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structbadgerdb_1_1hash_bucket.html" afterPath="$PROJECT_DIR$/docs/structbadgerdb_1_1hash_bucket.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structtuple-members.html" afterPath="$PROJECT_DIR$/docs/structtuple-members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/structtuple.html" afterPath="$PROJECT_DIR$/docs/structtuple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/types_8h_source.html" afterPath="$PROJECT_DIR$/docs/types_8h_source.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.cpp" afterPath="$PROJECT_DIR$/src/btree.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.h" afterPath="$PROJECT_DIR$/src/btree.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="BTree.iws" />
@@ -44,13 +244,24 @@
       <file leaf-file-name="btree.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/btree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.86141574">
-              <caret line="324" column="0" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33673468">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <element signature="e#4235#4244#0" expanded="true" />
-                <element signature="e#4289#4291#0" expanded="true" />
-                <element signature="e#4437#4446#0" expanded="true" />
-                <element signature="e#4500#4502#0" expanded="true" />
+                <element signature="e#4272#4281#0" expanded="true" />
+                <element signature="e#4326#4328#0" expanded="true" />
+                <element signature="e#4474#4483#0" expanded="true" />
+                <element signature="e#4537#4539#0" expanded="true" />
+                <element signature="e#4667#4676#0" expanded="true" />
+                <element signature="e#4729#4731#0" expanded="true" />
+                <element signature="e#4860#4869#0" expanded="true" />
+                <element signature="e#4920#4922#0" expanded="true" />
+                <element signature="e#5049#5068#0" expanded="true" />
+                <element signature="e#6691#6710#0" expanded="true" />
+                <element signature="e#8615#8644#0" expanded="true" />
+                <element signature="e#9296#9325#0" expanded="true" />
+                <element signature="e#12497#12516#0" expanded="true" />
+                <element signature="e#16839#16858#0" expanded="true" />
+                <element signature="e#19064#19083#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,21 +311,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="6" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+              <caret line="739" column="0" selection-start-line="739" selection-start-column="0" selection-end-line="739" selection-end-column="0" />
               <folding>
                 <element signature="e#213#230#0" expanded="true" />
               </folding>
@@ -135,8 +336,18 @@
       <file leaf-file-name="buffer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/buffer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.8">
-              <caret line="170" column="13" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
+            <state vertical-scroll-proportion="-20.366667">
+              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bufHashTbl.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bufHashTbl.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.766666">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -148,7 +359,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="0b2d09be0ac95805631e4a6e74e9451271363f95" />
+        <entry key="$PROJECT_DIR$" value="version2.0" />
       </map>
     </option>
   </component>
@@ -156,8 +367,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/btree.h" />
-        <option value="$PROJECT_DIR$/src/btree.cpp" />
+        <option value="$PROJECT_DIR$/src/buffer.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/btree.cpp" />
       </list>
     </option>
   </component>
@@ -355,23 +567,29 @@
       <option name="project" value="LOCAL" />
       <updated>1449424350502</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Version 3.0">
+      <created>1449439573803</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1449439573803</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="25" width="1924" height="1154" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1368477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1368477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40097088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14536741" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40097088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14536741" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36900958" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -402,31 +620,14 @@
     <MESSAGE value="Version 1.0" />
     <MESSAGE value="Version 1.1" />
     <MESSAGE value="Version 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0" />
+    <MESSAGE value="Version 3.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 3.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/page.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="6" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="500" column="51" selection-start-line="500" selection-start-column="51" selection-end-line="500" selection-end-column="51" />
-          <folding>
-            <element signature="e#213#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/file.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -448,10 +649,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4235#4244#0" expanded="true" />
-            <element signature="e#4289#4291#0" expanded="true" />
-            <element signature="e#4437#4446#0" expanded="true" />
-            <element signature="e#4500#4502#0" expanded="true" />
+            <element signature="e#4272#4281#0" expanded="true" />
+            <element signature="e#4326#4328#0" expanded="true" />
+            <element signature="e#4474#4483#0" expanded="true" />
+            <element signature="e#4537#4539#0" expanded="true" />
+            <element signature="e#4667#4676#0" expanded="true" />
+            <element signature="e#4729#4731#0" expanded="true" />
+            <element signature="e#4860#4869#0" expanded="true" />
+            <element signature="e#4920#4922#0" expanded="true" />
+            <element signature="e#5049#5068#0" expanded="true" />
+            <element signature="e#6691#6710#0" expanded="true" />
+            <element signature="e#8615#8644#0" expanded="true" />
+            <element signature="e#9296#9325#0" expanded="true" />
+            <element signature="e#12497#12516#0" expanded="true" />
+            <element signature="e#16839#16858#0" expanded="true" />
+            <element signature="e#19064#19083#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -538,10 +750,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4235#4244#0" expanded="true" />
-            <element signature="e#4289#4291#0" expanded="true" />
-            <element signature="e#4437#4446#0" expanded="true" />
-            <element signature="e#4500#4502#0" expanded="true" />
+            <element signature="e#4272#4281#0" expanded="true" />
+            <element signature="e#4326#4328#0" expanded="true" />
+            <element signature="e#4474#4483#0" expanded="true" />
+            <element signature="e#4537#4539#0" expanded="true" />
+            <element signature="e#4667#4676#0" expanded="true" />
+            <element signature="e#4729#4731#0" expanded="true" />
+            <element signature="e#4860#4869#0" expanded="true" />
+            <element signature="e#4920#4922#0" expanded="true" />
+            <element signature="e#5049#5068#0" expanded="true" />
+            <element signature="e#6691#6710#0" expanded="true" />
+            <element signature="e#8615#8644#0" expanded="true" />
+            <element signature="e#9296#9325#0" expanded="true" />
+            <element signature="e#12497#12516#0" expanded="true" />
+            <element signature="e#16839#16858#0" expanded="true" />
+            <element signature="e#19064#19083#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -628,10 +851,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4235#4244#0" expanded="true" />
-            <element signature="e#4289#4291#0" expanded="true" />
-            <element signature="e#4437#4446#0" expanded="true" />
-            <element signature="e#4500#4502#0" expanded="true" />
+            <element signature="e#4272#4281#0" expanded="true" />
+            <element signature="e#4326#4328#0" expanded="true" />
+            <element signature="e#4474#4483#0" expanded="true" />
+            <element signature="e#4537#4539#0" expanded="true" />
+            <element signature="e#4667#4676#0" expanded="true" />
+            <element signature="e#4729#4731#0" expanded="true" />
+            <element signature="e#4860#4869#0" expanded="true" />
+            <element signature="e#4920#4922#0" expanded="true" />
+            <element signature="e#5049#5068#0" expanded="true" />
+            <element signature="e#6691#6710#0" expanded="true" />
+            <element signature="e#8615#8644#0" expanded="true" />
+            <element signature="e#9296#9325#0" expanded="true" />
+            <element signature="e#12497#12516#0" expanded="true" />
+            <element signature="e#16839#16858#0" expanded="true" />
+            <element signature="e#19064#19083#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,14 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/file.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/types.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -801,32 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/file.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/buffer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.8">
-          <caret line="170" column="13" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="e#213#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -839,15 +1039,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/file.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bufHashTbl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.766666">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bufHashTbl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/buffer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.366667">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/file.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="739" column="0" selection-start-line="739" selection-start-column="0" selection-end-line="739" selection-end-column="0" />
+          <folding>
+            <element signature="e#213#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.86141574">
-          <caret line="324" column="0" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33673468">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#4235#4244#0" expanded="true" />
-            <element signature="e#4289#4291#0" expanded="true" />
-            <element signature="e#4437#4446#0" expanded="true" />
-            <element signature="e#4500#4502#0" expanded="true" />
+            <element signature="e#4272#4281#0" expanded="true" />
+            <element signature="e#4326#4328#0" expanded="true" />
+            <element signature="e#4474#4483#0" expanded="true" />
+            <element signature="e#4537#4539#0" expanded="true" />
+            <element signature="e#4667#4676#0" expanded="true" />
+            <element signature="e#4729#4731#0" expanded="true" />
+            <element signature="e#4860#4869#0" expanded="true" />
+            <element signature="e#4920#4922#0" expanded="true" />
+            <element signature="e#5049#5068#0" expanded="true" />
+            <element signature="e#6691#6710#0" expanded="true" />
+            <element signature="e#8615#8644#0" expanded="true" />
+            <element signature="e#9296#9325#0" expanded="true" />
+            <element signature="e#12497#12516#0" expanded="true" />
+            <element signature="e#16839#16858#0" expanded="true" />
+            <element signature="e#19064#19083#0" expanded="true" />
           </folding>
         </state>
       </provider>
