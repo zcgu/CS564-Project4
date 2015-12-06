@@ -27,64 +27,62 @@ namespace badgerdb
 // -----------------------------------------------------------------------------
 // BTreeIndex::BTreeIndex -- Template
 // -----------------------------------------------------------------------------
-	// copy b to a
-	template <class T>
-	void copy(T& a, T& b){
-		a = b;
-	}
+// copy b to a
+template <class T>
+void copy(T& a, T& b){
+	a = b;
+}
 
-	// specialiazation char[STRINGSIZE] copy
-	template <>
-	void copy<char[STRINGSIZE]>(char (&a)[STRINGSIZE], char (&b)[STRINGSIZE]){
-		strncpy( a, b, STRINGSIZE);
-		//a[STRINGSIZE - 1] = '\0';
-	}
+// specialiazation char[STRINGSIZE] copy
+template <>
+void copy<char[STRINGSIZE]>(char (&a)[STRINGSIZE], char (&b)[STRINGSIZE]){
+	strncpy( a, b, STRINGSIZE);
+	//a[STRINGSIZE - 1] = '\0';
+}
 
-	// Type T small than comparison
-	template <class T>
-	bool smallerThan(T a, T b){
-		return a<b;
-	}
+// Type T small than comparison
+template <class T>
+bool smallerThan(T a, T b){
+	return a<b;
+}
 
-	// specialiazation char[STRINGSIZE] smaller comparison
-	template <>
-	bool smallerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-		return strncmp(a, b, STRINGSIZE) < 0;
-	}
+// specialiazation char[STRINGSIZE] smaller comparison
+template <>
+bool smallerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
+	return strncmp(a, b, STRINGSIZE) < 0;
+}
 
-	//  Type T bigger comparison
-	template <class T>
-	bool biggerThan(T a, T b){
-		return a>b;
-	}
+//  Type T bigger comparison
+template <class T>
+bool biggerThan(T a, T b){
+	return a>b;
+}
 
-	// specialization char[STRINGSIZE] bigger comparison
-	template <>
-	bool biggerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-		return strncmp(a, b, STRINGSIZE) > 0;
-	}
+// specialization char[STRINGSIZE] bigger comparison
+template <>
+bool biggerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
+	return strncmp(a, b, STRINGSIZE) > 0;
+}
 
-	// Type T equal comparison
-	template <class T>
-	bool equalTo(T a, T b){
-		return a==b;
-	}
+// Type T equal comparison
+template <class T>
+bool equalTo(T a, T b){
+	return a==b;
+}
 
-	// specialization char[STRINGSIZE] equal to comparison
-	template <>
-	bool equalTo<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-		return strncmp(a, b, STRINGSIZE) == 0;
-	}
-
-
-
+// specialization char[STRINGSIZE] equal to comparison
+template <>
+bool equalTo<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
+	return strncmp(a, b, STRINGSIZE) == 0;
+}
 
 // -----------------------------------------------------------------------------
 // BTreeIndex::BTreeIndex -- Constructor
 // -----------------------------------------------------------------------------
-/*The constructor checks if the specified index file exists. And index file name
-is constructed by concatenating the relational name with the offset of the attribute
-over which the index is built*/
+/*The constructor checks if the specified index file exists.
+ *And index file name is constructed by concatenating the relational name with the
+ * offset of the attribute over which the index is built
+ * */
 BTreeIndex::BTreeIndex(const std::string & relationName,
 		std::string & outIndexName,
 		BufMgr *bufMgrIn,
@@ -173,8 +171,8 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 // BTreeIndex::~BTreeIndex -- destructor
 // -----------------------------------------------------------------------------
 /*
- Clearing up any variables, unpinning any B+ Tree pages that are pinned,
-    and flushing the index file.
+ * Clearing up any variables, unpinning any B+ Tree pages that are pinned,
+ * and flushing the index file.
  */
 BTreeIndex::~BTreeIndex()
 {
@@ -192,7 +190,8 @@ BTreeIndex::~BTreeIndex()
 
 
 /*
- * this helper help the leaf to split and return newPageId and new Value to parent*/
+ * this helper help the leaf to split and return newPageId and new Value to parent
+ * */
 template <class T, class T1>
 void BTreeIndex::leafSplitHelper(int pos, int last, int LEAFARRAYMAX,
 								 int NONLEAFARRAYMAX,
@@ -254,7 +253,8 @@ void BTreeIndex::leafSplitHelper(int pos, int last, int LEAFARRAYMAX,
 
 
 /*
- * When the non Leaf need to split it call this nonLeafSplit Helper*/
+ * When the non Leaf need to split it call this nonLeafSplit Helper
+ * */
 template <class T, class T2>
 void  BTreeIndex::nonLeafSplitHelper(int pos,
 									 int NONLEAFARRAYMAX,
@@ -318,7 +318,9 @@ void  BTreeIndex::nonLeafSplitHelper(int pos,
 
 
 /*
- * when the index file is empty it create the first Leaf
+ * Helper function when we need create a new page.
+ * This function can only be called once,
+ * when the index file is empty and we need to create first leaf node.
  * */
 template <class T, class T1, class T2>
 void BTreeIndex::createFirstLeaf(int LEAFARRAYMAX,
@@ -349,9 +351,10 @@ void BTreeIndex::createFirstLeaf(int LEAFARRAYMAX,
 
 
 /*
- * insertRecursive method, reservely called until it insert the entry
+ * This function will search a position for a new entry.
+ * If current page is a non-leaf page, it will find a position and call insertEntryRecursive.
+ * If current page is leaf page, it will try to insert new entry.
  * */
-
 template <class T, class T1, class T2>
 void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 									  PageId pageId,
@@ -470,7 +473,8 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 }
 
 /*
- *If the old root is filled this method is called to create a new root
+ * This function is called when root node got split.
+ * We need to create a new root page and link it to the old root page and new page.
  * */
 template<class T, class T1>
 void BTreeIndex::handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX){
@@ -489,12 +493,16 @@ void BTreeIndex::handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX){
 	bufMgr->unPinPage(file, newRootPageId, true);std::cout<<"handle new root finish"<<std::endl; //TODO
 	std::cout<<"handle new root finish"<<std::endl; //TODO
 }
+
 // -----------------------------------------------------------------------------
 // BTreeIndex::insertEntry
 // -----------------------------------------------------------------------------
 /*
- * This method inserts a new entry into the index using the pair <key, rid>. It basically follow the
- * regular algorithrim of insert in B+ tree. Detail in the report.
+ * Insert a new entry using the pair <value,rid>.
+ * Start from root to recursively find out the leaf to insert the entry in. The insertion may cause splitting of leaf node.
+ * This splitting will require addition of new leaf page number entry into the parent non-leaf, which may in-turn get split.
+ * This may continue all the way upto the root causing the root to get split. If root gets split, metapage needs to be changed accordingly.
+ * Make sure to unpin pages as soon as you can.
  * */
 const void BTreeIndex::insertEntry(const void *key, const RecordId rid) 
 {
@@ -553,9 +561,9 @@ const void BTreeIndex::insertEntry(const void *key, const RecordId rid)
 // BTreeIndex::startScan
 // -----------------------------------------------------------------------------
 /*This method is used to begin a “filtered scan” of the index.
-  Check if the input range is make sense.Store it if it is, otherwise throw exception.
-  It track down start from root to the low value of the search.
-.*/
+ * Check if the input range is make sense.Store it if it is, otherwise throw exception.
+ * It track down start from root to the low value of the search.
+ */
 const void BTreeIndex::startScan(const void* lowValParm,
 								 const Operator lowOpParm,
 								 const void* highValParm,
@@ -597,8 +605,11 @@ const void BTreeIndex::startScan(const void* lowValParm,
 
 /*
  * Helper method of startScan, basically it base on the low bound to find the first position of the entry.
+ * This function helps the startScan function.
+ * T is the data type.
+ * T1 is the non-leaf struct.
+ * This function is called by the startScan and do the work.
  * */
-
 template<class T, class T1>
 void BTreeIndex::startScanHelper(T lowValParm,
 								 T highValParm,
@@ -643,14 +654,7 @@ void BTreeIndex::startScanHelper(T lowValParm,
 // -----------------------------------------------------------------------------
 // BTreeIndex::scanNext
 // -----------------------------------------------------------------------------
-/*
- * It starts to scan from the first value,
-    which is the position of low value.
-    If current page is full or reach the right most entry in the current page,
-    we use leafNode->right to jump to the next right page to continue scan the entry.
-    If we get to the last leaf node or the key is larger than high value,
-    then the scan is finish.
- * */
+
 const void BTreeIndex::scanNext(RecordId& outRid) 
 {
 	if(scanExecuting == false)
@@ -663,8 +667,14 @@ const void BTreeIndex::scanNext(RecordId& outRid)
 	else
 		scanNextHelper<char[STRINGSIZE], LeafNodeString> (outRid, lowValChar, highValChar, STRINGARRAYLEAFSIZE);
 }
+
 /*
- * Helper method of the scan Next
+ * It starts to scan from the first value,
+ * which is the position of low value.
+ * If current page is full or reach the right most entry in the current page,
+ * we use leafNode->right to jump to the next right page to continue scan the entry.
+ * If we get to the last leaf node or the key is larger than high value,
+ * then the scan is finish.
  * */
 template <class T, class T1>
 void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAYMAX)
@@ -708,10 +718,10 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 		return ;
 	}
 }
+
 // -----------------------------------------------------------------------------
 // BTreeIndex::endScan
 // -----------------------------------------------------------------------------
-//
 /*
  * Terminate the scan and unpins all the pages.
  * */

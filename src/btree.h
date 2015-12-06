@@ -440,6 +440,18 @@ class BTreeIndex {
 	**/
 	const void insertEntry(const void* key, const RecordId rid);
 
+	/**
+       * This function will search a position for a new entry.
+       * If current page is a non-leaf page, it will find a position and call insertEntryRecursive.
+       * If current page is leaf page, it will try to insert new entry.
+       * @param ridKeyPair		The new entry that need to insert.
+       * @param pageId			Current page number.
+       * @param isLeaf			Whether current leaf is leaf page.
+       * @param LEAFARRAYMAX	Length of leaf page array.
+       * @param NONLEAFARRAYMAX	Length of non-leaf page array.
+       * @param newValue		Need value pushed up by the child.
+       * @param newPage			Page number of the new child page.
+      **/
 	template <class T, class T1, class T2>
 	void insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
 							  PageId pageId,
@@ -449,8 +461,17 @@ class BTreeIndex {
 							  T& newValue,
 							  PageId& newPage);
 
-	//////////////////////////////////////////////////////////////////
-
+	/**
+       * Helper function when a leaf node need to split.
+       * @param pos				Insert position.
+       * @param last			last position for this node.
+       * @param LEAFARRAYMAX	Length of leaf page array.
+       * @param NONLEAFARRAYMAX	Length of non-leaf page array.
+       * @param ridKeyPair		The new entry that need to insert.
+       * @param leafNode		Pointer to current page.
+       * @param newPageId		Need value pushed up
+       * @param newValue		Page number of the new page.
+      **/
 	template <class T, class T1>
 	void leafSplitHelper(int pos, int last, int LEAFARRAYMAX,
 									 int NONLEAFARRAYMAX,
@@ -459,9 +480,16 @@ class BTreeIndex {
 									 PageId& newPageId,
 						             T & newValue);
 
-
-
-
+	/**
+       * Helper function when a nonleaf node need to split.
+       * @param pos				Insert position.
+       * @param NONLEAFARRAYMAX	Length of non-leaf page array.
+       * @param nonLeafNode		Pointer to current page.
+       * @param newPageId		Need value pushed up
+       * @param newValue		Page number of the new page.
+       * @param newChildValue	Need value pushed up by the child.
+       * @param newChildPageId	Page number of the new child page.
+      **/
 	template <class T, class T2>
 	void nonLeafSplitHelper(int pos,
 							int NONLEAFARRAYMAX,
@@ -471,19 +499,29 @@ class BTreeIndex {
 							T & newChildValue,
 							PageId newChildPageId);
 
-
-
+	/**
+       * Helper function when we need create a new page.
+       * This function can only be called once, when the index file is empty and we need to create first leaf node.
+	   * @param LEAFARRAYMAX	Length of leaf page array.
+	   * @param nonLeafNode		Current page, which will always be the root page.
+	   * @param pageId			PageID for current page.
+      **/
 	template <class T, class T1, class T2>
 	void createFirstLeaf(int LEAFARRAYMAX,
 									 RIDKeyPair<T> ridKeyPair,
 									 T2* nonLeafNode,
 									 PageId pageId);
 
-
-//////////////////////////////////////////////////////////////////////
-
+	/**
+       * This function is called when root node got split.
+       * We need to create a new root page and link it to the old root page and new page.
+	   * @param newValue		Key value pushed up bi child.
+	   * @param newPageId		Page id of new child page.
+	   * @param ARRAYMAX		Length of array of non-leaf page.
+      **/
 		template<class T, class T1>
 	void handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX);
+
   /**
 	 * Begin a filtered scan of the index.  For instance, if the method is called
 	 * using ("a",GT,"d",LTE) then we should seek all entries with a value
@@ -502,25 +540,49 @@ class BTreeIndex {
 	const void startScan(const void* lowVal, const Operator lowOp, const void* highVal, const Operator highOp);
 
 
+	/**
+	* This function helps the startScan function.
+	 * T is the data type.
+	 * T1 is the non-leaf struct.
+	 * This function is called by the startScan and do the work.
+	 * @param lowValParm		Low value of the search range.
+	 * @param highValParm		High value of the search range.
+	 * @param ARRAYMAX			Length of the non-leaf array.
+	* @throws BadScanrangeException If lowVal > highval
+	**/
 	template<class T, class T1>
 	void startScanHelper(T lowValParm,
 						 T highValParm,
-						 int ARRAYMAX
-	);
+						 int ARRAYMAX);
 
-
-			/**
-               * Fetch the record id of the next index entry that matches the scan.
-               * Return the next record from current page being scanned. If current page has been scanned to its entirety, move on to the right sibling of current page, if any exists, to start scanning that page. Make sure to unpin any pages that are no longer required.
-             * @param outRid	RecordId of next record found that satisfies the scan criteria returned in this
-               * @throws ScanNotInitializedException If no scan has been initialized.
-               * @throws IndexScanCompletedException If no more records, satisfying the scan criteria, are left to be scanned.
-              **/
+	/**
+	   * Fetch the record id of the next index entry that matches the scan.
+	   * Return the next record from current page being scanned. If current page has been scanned to its entirety, move on to the right sibling of current page, if any exists, to start scanning that page. Make sure to unpin any pages that are no longer required.
+	   * @param outRid	RecordId of next record found that satisfies the scan criteria returned in this
+	   * @throws ScanNotInitializedException If no scan has been initialized.
+	   * @throws IndexScanCompletedException If no more records, satisfying the scan criteria, are left to be scanned.
+	  **/
 	const void scanNext(RecordId& outRid);  // returned record id
 
-
+	/**
+      	* This function helps the scanNext.
+      	* T is the data type.
+      	* T1 is the leaf struct type.
+        * This function is called by the scanNext and do the scan next work.
+        * It starts to scan from the first value,
+		* which is the position of low value.
+		* If current page is full or reach the right most entry in the current page,
+		* we use leafNode->right to jump to the next right page to continue scan the entry.
+		* If we get to the last leaf node or the key is larger than high value,
+		* then the scan is finish.
+      * @param outRid       Output rid.
+      * @param lowVal		The low value of the search range.
+      * @param highVal		The high value of the search range	.
+      * @param ARRAYMAX		The length of the leaf array.
+      */
 	template <class T, class T1>
 	void scanNextHelper(RecordId& outRid, T lowVal, T highVal, int ARRAYMAX);
+
   /**
 	 * Terminate the current scan. Unpin any pinned pages. Reset scan specific variables.
 	 * @throws ScanNotInitializedException If no scan has been initialized.
