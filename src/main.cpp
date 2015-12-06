@@ -42,7 +42,7 @@ using namespace badgerdb;
 int testNum = 1;
 const std::string relationName = "relA";
 //If the relation size is changed then the second parameter 2 chechPassFail may need to be changed to number of record that are expected to be found during the scan, else tests will erroneously be reported to have failed.
-const int	relationSize = 5000;
+int	relationSize = 5000;
 std::string intIndexName, doubleIndexName, stringIndexName;
 
 // This is the structure for tuples in the base relation
@@ -77,6 +77,8 @@ int stringScan(BTreeIndex *index, int lowVal, Operator lowOp, int highVal, Opera
 void test1();
 void test2();
 void test3();
+void test4();
+void test5();
 void errorTests();
 void deleteRelation();
 
@@ -166,6 +168,8 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
+	test4();
+	test5();
 	errorTests();
 	File::remove(intIndexName);
 
@@ -204,6 +208,65 @@ void test3()
 	indexTests();
 	deleteRelation();
 }
+
+void test4()
+{
+	// Big Relation Test
+	// Create a relation with tuples valued 0 to relationSize and perform index tests
+	// on attributes of all three types (int, double, string)
+	relationSize = 400000;
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationForward" << std::endl;
+
+	createRelationForward();
+	indexTests();
+	deleteRelation();
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationBackward" << std::endl;
+	createRelationBackward();
+	indexTests();
+	deleteRelation();
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationRandom" << std::endl;
+	createRelationRandom();
+	indexTests();
+	deleteRelation();
+
+	relationSize = 5000;
+}
+
+void test5()
+{
+	// Big Relation Test
+	// Create a relation with tuples valued 0 to relationSize and perform index tests
+	// on attributes of all three types (int, double, string)
+	relationSize = 800000;
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationForward2" << std::endl;
+
+	createRelationForward();
+	indexTests();
+	deleteRelation();
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationBackward2" << std::endl;
+	createRelationBackward();
+	indexTests();
+	deleteRelation();
+
+	std::cout << "---------------------" << std::endl;
+	std::cout << "createBigRelationRandom2" << std::endl;
+	createRelationRandom();
+	indexTests();
+	deleteRelation();
+
+	relationSize = 5000;
+}
+
 
 // -----------------------------------------------------------------------------
 // createRelationForward

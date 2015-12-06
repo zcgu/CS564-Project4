@@ -17,6 +17,7 @@
 #include "exceptions/end_of_file_exception.h"
 #include "exceptions/file_exists_exception.h"
 #include "exceptions/hash_not_found_exception.h"
+#include "exceptions/page_not_pinned_exception.h"
 
 
 //#define DEBUG
@@ -51,10 +52,11 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		indexMetaInfo->attrByteOffset = attrByteOffset;
 		indexMetaInfo->attrType = attrType;
 		strcpy(indexMetaInfo->relationName, relationName.c_str());
-		bufMgrIn->unPinPage(file, headerPageNum, true);
-
 		//root page
 		bufMgrIn->allocPage(file, rootPageNum, page);
+		indexMetaInfo->rootPageNo = rootPageNum;
+		bufMgrIn->unPinPage(file, headerPageNum, true);
+
 		if(attributeType == INTEGER){
 			NonLeafNodeInt *nonLeafNodeInt = (NonLeafNodeInt *) page;
 			for(int i=0;i<INTARRAYNONLEAFSIZE;i++) nonLeafNodeInt->pageNoArray[i] = 0;
@@ -69,11 +71,6 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 			nonLeafNodeString->level = 1;
 		}
 		bufMgrIn->unPinPage(file, rootPageNum, true);
-
-		bufMgrIn->readPage(file, headerPageNum, page);
-		indexMetaInfo = (IndexMetaInfo*) page;
-		indexMetaInfo->rootPageNo = rootPageNum;
-		bufMgrIn->unPinPage(file, headerPageNum, true);
 
 		//insert index
 		FileScan fscan(relationName, bufMgr);
@@ -95,8 +92,10 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 		if(indexMetaInfo->attrByteOffset != attrByteOffset
 		   || indexMetaInfo->attrType != attrType
 		   || strcmp(indexMetaInfo->relationName, relationName.c_str()) != 0
-				)
+				){
+			bufMgrIn->unPinPage(file, headerPageNum, false);
 			throw BadIndexInfoException("constructor parameters do not match exist index file");
+		}
 
 		this->rootPageNum = indexMetaInfo->rootPageNo;
 		bufMgrIn->unPinPage(file, headerPageNum, false);
@@ -595,18 +594,15 @@ void BTreeIndex::startScanHelper(T lowValParm,
 
 const void BTreeIndex::scanNext(RecordId& outRid) 
 {
-	if(scanExecuting == false){
+	if(scanExecuting == false)
 		throw ScanNotInitializedException();
-	}
 
-	if(attributeType == INTEGER){
+	if(attributeType == INTEGER)
 		scanNextHelper<int, LeafNodeInt> (outRid, lowValInt, highValInt, INTARRAYLEAFSIZE);
-	} else if (attributeType == DOUBLE){
+	else if (attributeType == DOUBLE)
 		scanNextHelper<double, LeafNodeDouble> (outRid, lowValDouble, highValDouble, DOUBLEARRAYLEAFSIZE);
-	} else {
+	else
 		scanNextHelper<char[STRINGSIZE], LeafNodeString> (outRid, lowValChar, highValChar, STRINGARRAYLEAFSIZE);
-	}
-
 }
 
 template <class T, class T1>
@@ -623,6 +619,7 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			PageId nextPageNum = leafNode->rightSibPageNo;
 			if(nextPageNum == 0){
 				std::cout<<"scan finish"<<std::endl; //TODO:delete
+				bufMgr->unPinPage(file, currentPageNum, false);
 				throw IndexScanCompletedException();
 			}
 
@@ -637,13 +634,18 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 
 		//Do not satisfy
 		if((lowOp==GT && !biggerThan<T> (leafNode->keyArray[nextEntry], lowVal) )
-		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal))
-		   || (highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
-		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) ))
+		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal)))
 		{
 			nextEntry++;
 			continue;
 		}
+
+		if((highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
+		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) )){
+			bufMgr->unPinPage(file, currentPageNum, false);
+			throw IndexScanCompletedException();
+		}
+
 //		std::cout<<"Got: "<< std::endl <<leafNode->keyArray[nextEntry] << std::endl; //TODO:delete
 
 		//Got a record
@@ -658,13 +660,16 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 //
 const void BTreeIndex::endScan() 
 {
-	if(scanExecuting == false){
+	if(scanExecuting == false)
 		throw ScanNotInitializedException();
-	}else {
-		scanExecuting = false;
+
+	scanExecuting = false;
+	try {
 		bufMgr->unPinPage(file, currentPageNum, false);
-		bufMgr->flushFile(file);
+	} catch (PageNotPinnedException e) {
+
 	}
+	bufMgr->flushFile(file);
 }
 
 
