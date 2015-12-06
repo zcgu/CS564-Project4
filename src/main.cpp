@@ -168,8 +168,8 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
-	test4();
-	test5();
+//	test4();
+//	test5();
 	errorTests();
 	File::remove(intIndexName);
 
@@ -229,11 +229,13 @@ void test4()
 	indexTests();
 	deleteRelation();
 
+	/*
 	std::cout << "---------------------" << std::endl;
 	std::cout << "createBigRelationRandom" << std::endl;
 	createRelationRandom();
 	indexTests();
 	deleteRelation();
+	*/
 
 	relationSize = 5000;
 }
@@ -243,7 +245,7 @@ void test5()
 	// Big Relation Test
 	// Create a relation with tuples valued 0 to relationSize and perform index tests
 	// on attributes of all three types (int, double, string)
-	relationSize = 800000;
+	relationSize = 600000;
 
 	std::cout << "---------------------" << std::endl;
 	std::cout << "createBigRelationForward2" << std::endl;
@@ -258,11 +260,13 @@ void test5()
 	indexTests();
 	deleteRelation();
 
+	/*
 	std::cout << "---------------------" << std::endl;
 	std::cout << "createBigRelationRandom2" << std::endl;
 	createRelationRandom();
 	indexTests();
 	deleteRelation();
+*/
 
 	relationSize = 5000;
 }

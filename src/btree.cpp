@@ -42,6 +42,9 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 	this->bufMgr = bufMgrIn;
 	this->attrByteOffset = attrByteOffset;
 	this->attributeType = attrType;
+	scanExecuting = false;
+	leafOccupancy = 0;
+	nodeOccupancy = 0;
 
 	try{
 		//metadata page
@@ -116,6 +119,13 @@ BTreeIndex::BTreeIndex(const std::string & relationName,
 
 BTreeIndex::~BTreeIndex()
 {
+	scanExecuting = false;
+
+	try {
+		bufMgr->unPinPage(file, currentPageNum, false);
+	} catch (PageNotPinnedException e) {
+	}
+
 	bufMgr->flushFile(file);
 	file->~File();
 }
@@ -127,9 +137,8 @@ void copy(T& a, T& b){
 
 template <>
 void copy<char[STRINGSIZE]>(char (&a)[STRINGSIZE], char (&b)[STRINGSIZE]){
-//	std::cout<<" copy string"<<std::endl;
-	strncpy( a, b, STRINGSIZE - 1);
-	a[STRINGSIZE - 1] = '\0';
+	strncpy( a, b, STRINGSIZE);
+	//a[STRINGSIZE - 1] = '\0';
 }
 
 template <class T>
@@ -159,7 +168,7 @@ bool equalTo(T a, T b){
 
 template <>
 bool equalTo<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-	return strcmp(a, b) == 0;
+	return strncmp(a, b, STRINGSIZE) == 0;
 }
 
 
@@ -295,28 +304,21 @@ void BTreeIndex::createFirstLeaf(int LEAFARRAYMAX,
 								 PageId pageId)
 {
 	std::cout<<"empty index"  << std::endl; //TODO:delete
-	PageId newPageIdLeft, newPageIdRight;
-	Page* pageLeft, *pageRight;
-	bufMgr->allocPage(file, newPageIdLeft, pageLeft);
-	bufMgr->allocPage(file, newPageIdRight, pageRight);
+	PageId newPageId;
+	Page* page;
+	bufMgr->allocPage(file, newPageId, page);
 
-	T1* leafNodeLeft = (T1*) pageLeft;
-	T1* leafNodeRight = (T1*) pageRight;
-	for(int i=0; i < LEAFARRAYMAX; i++){
-		leafNodeLeft->ridArray[i].page_number = 0;
-		leafNodeRight->ridArray[i].page_number = 0;
-	}
-	copy<T> (leafNodeRight->keyArray[0], ridKeyPair.key);
-	leafNodeRight->ridArray[0] = ridKeyPair.rid;
-	leafNodeLeft->rightSibPageNo = newPageIdRight;
-	leafNodeRight->rightSibPageNo = 0;
-	copy<T> (nonLeafNode->keyArray[0], ridKeyPair.key);
-	nonLeafNode->pageNoArray[0] = newPageIdLeft;
-	nonLeafNode->pageNoArray[1] = newPageIdRight;
+	T1* leafNode = (T1*) page;
+	for(int i=0; i < LEAFARRAYMAX; i++)
+		leafNode->ridArray[i].page_number = 0;
+
+	copy<T> (leafNode->keyArray[0], ridKeyPair.key);
+	leafNode->ridArray[0] = ridKeyPair.rid;
+	leafNode->rightSibPageNo = 0;
+	nonLeafNode->pageNoArray[0] = newPageId;
 
 	//unpin
-	bufMgr->unPinPage(file, newPageIdLeft, true);
-	bufMgr->unPinPage(file, newPageIdRight, true);
+	bufMgr->unPinPage(file, newPageId, true);
 	bufMgr->unPinPage(file, pageId, true);
 
 };
@@ -499,8 +501,8 @@ const void BTreeIndex::insertEntry(const void *key, const RecordId rid)
 
 		RIDKeyPair<char[STRINGSIZE] > ridKeyPairString;
 		ridKeyPairString.rid = rid;
-		strncpy(ridKeyPairString.key, (char*) key, STRINGSIZE-1);
-		ridKeyPairString.key[STRINGSIZE - 1] = '\0';
+		strncpy(ridKeyPairString.key, (char*) key, STRINGSIZE);
+		//ridKeyPairString.key[STRINGSIZE - 1] = '\0';
 		char newValue[STRINGSIZE];
 		PageId newPageId = 0;
 
@@ -546,11 +548,11 @@ const void BTreeIndex::startScan(const void* lowValParm,
 		startScanHelper<double , NonLeafNodeDouble>(*((double *) lowValParm), *((double *) highValParm), DOUBLEARRAYNONLEAFSIZE);
 	} else {
 		strncpy((char*) this->lowValString.c_str(), (char *)lowValParm, STRINGSIZE-1);
-		strncpy(lowValChar, (char *)lowValParm, STRINGSIZE-1);
-		lowValChar[STRINGSIZE - 1] = '\0';
+		strncpy(lowValChar, (char *)lowValParm, STRINGSIZE);
+		//lowValChar[STRINGSIZE - 1] = '\0';
 		strncpy((char*) this->highValString.c_str(), (char *)highValParm, STRINGSIZE-1);
-		strncpy(highValChar, (char *)highValParm, STRINGSIZE-1);
-		highValChar[STRINGSIZE - 1] = '\0';
+		strncpy(highValChar, (char *)highValParm, STRINGSIZE);
+		//highValChar[STRINGSIZE - 1] = '\0';
 
 		std::cout<< "Start scan finish, lowValChar: "<< lowValChar <<" highValChar: "<< highValChar<<std::endl;
 		startScanHelper<char[STRINGSIZE], NonLeafNodeString> (lowValChar, highValChar, STRINGARRAYNONLEAFSIZE);
@@ -673,14 +675,14 @@ const void BTreeIndex::endScan()
 {
 	if(scanExecuting == false)
 		throw ScanNotInitializedException();
-
 	scanExecuting = false;
+
 	try {
 		bufMgr->unPinPage(file, currentPageNum, false);
 	} catch (PageNotPinnedException e) {
-
 	}
-	bufMgr->flushFile(file);
+
+//	bufMgr->flushFile(file);
 }
 
 
