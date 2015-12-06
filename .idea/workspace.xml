@@ -11,39 +11,8 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="Version 3.2">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badgerdb_main" afterPath="$PROJECT_DIR$/src/badgerdb_main" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/exceptions.a" afterPath="$PROJECT_DIR$/src/lib/exceptions.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/btree.o" afterPath="$PROJECT_DIR$/src/obj/btree.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_buffer_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_index_info_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_opcodes_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_scan_param_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/bad_scanrange_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/badgerdb_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/buffer_exceeded_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/end_of_file_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_exists_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_not_found_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/file_open_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_already_present_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_not_found_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/hash_table_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/index_scan_completed_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/insufficient_space_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_page_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_record_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/invalid_slot_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/no_such_key_found_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/page_not_pinned_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/page_pinned_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/scan_not_initialized_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" afterPath="$PROJECT_DIR$/src/obj/exceptions/slot_in_use_exception.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/filescan.o" afterPath="$PROJECT_DIR$/src/obj/filescan.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/obj/main.o" afterPath="$PROJECT_DIR$/src/obj/main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.cpp" afterPath="$PROJECT_DIR$/src/btree.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/btree.h" afterPath="$PROJECT_DIR$/src/btree.h" />
+    <list default="true" id="b6a9c01f-f9e9-45d5-aa89-943b2ee48972" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="BTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +36,7 @@
       <file leaf-file-name="btree.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/btree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.462585">
+            <state vertical-scroll-proportion="1.4607251">
               <caret line="322" column="3" selection-start-line="322" selection-start-column="3" selection-end-line="322" selection-end-column="3" />
               <folding>
                 <element signature="e#1063#1072#0" expanded="true" />
@@ -93,7 +62,7 @@
       <file leaf-file-name="btree.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/btree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-41.17857">
+            <state vertical-scroll-proportion="0.0">
               <caret line="508" column="42" selection-start-line="508" selection-start-column="42" selection-end-line="508" selection-end-column="42" />
               <folding>
                 <element signature="e#2845#2854#0" expanded="true" />
@@ -159,7 +128,7 @@
       <file leaf-file-name="buffer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/buffer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.366667">
+            <state vertical-scroll-proportion="0.0">
               <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
               <folding />
             </state>
@@ -169,7 +138,7 @@
       <file leaf-file-name="bufHashTbl.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bufHashTbl.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.766666">
+            <state vertical-scroll-proportion="0.0">
               <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding />
             </state>
@@ -409,12 +378,12 @@
     <frame x="-2" y="25" width="1924" height="1154" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1368477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13791268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40097088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4001938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14536741" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36900958" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -846,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bufHashTbl.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.766666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
@@ -878,13 +846,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/buffer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.366667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
           <folding />
         </state>
@@ -900,7 +867,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-41.17857">
+        <state vertical-scroll-proportion="0.0">
           <caret line="508" column="42" selection-start-line="508" selection-start-column="42" selection-end-line="508" selection-end-column="42" />
           <folding>
             <element signature="e#2845#2854#0" expanded="true" />
@@ -922,7 +889,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/btree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.462585">
+        <state vertical-scroll-proportion="1.4607251">
           <caret line="322" column="3" selection-start-line="322" selection-start-column="3" selection-end-line="322" selection-end-column="3" />
           <folding>
             <element signature="e#1063#1072#0" expanded="true" />
