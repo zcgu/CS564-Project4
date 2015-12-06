@@ -374,7 +374,7 @@ class BTreeIndex {
    * Low STRING value for scan.
    */
 	std::string	lowValString;
-
+	char lowValChar[STRINGSIZE];
   /**
    * High INTEGER value for scan.
    */
@@ -389,6 +389,7 @@ class BTreeIndex {
    * High STRING value for scan.
    */
 	std::string highValString;
+	char highValChar[STRINGSIZE];
 	
   /**
    * Low Operator. Can only be GT(>) or GTE(>=).
@@ -443,13 +444,15 @@ class BTreeIndex {
 	void insertEntryRecursive(RIDKeyPair<T > ridKeyPair,
 							  PageId pageId,
 							  bool isLeaf,
-							  int ARRAYMAX1,
-							  int ARRAYMAX2,
+							  int LEAFARRAYMAX,
+							  int NONLEAFARRAYMAX,
 							  T& newValue,
 							  PageId& newPage);
 
-	template<class T, class T1>
-	void handleNewRoot(T newValue, PageId newPageId, int ARRAYMAX);
+
+
+		template<class T, class T1>
+	void handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX);
   /**
 	 * Begin a filtered scan of the index.  For instance, if the method is called
 	 * using ("a",GT,"d",LTE) then we should seek all entries with a value

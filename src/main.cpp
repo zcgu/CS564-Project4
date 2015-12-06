@@ -462,7 +462,7 @@ int intScan(BTreeIndex * index, int lowVal, Operator lowOp, int highVal, Operato
 
 			if( numResults < 5 )
 			{
-				std::cout << "at:" << scanRid.page_number << "," << scanRid.slot_number;
+				std::cout <<std::endl << "at:" << scanRid.page_number << "," << scanRid.slot_number;
 				std::cout << " -->:" << myRec.i << ":" << myRec.d << ":" << myRec.s << ":" <<std::endl;
 			}
 			else if( numResults == 5 )
