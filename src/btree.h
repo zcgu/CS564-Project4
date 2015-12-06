@@ -449,7 +449,38 @@ class BTreeIndex {
 							  T& newValue,
 							  PageId& newPage);
 
+	//////////////////////////////////////////////////////////////////
 
+	template <class T, class T1>
+	void leafSplitHelper(int pos, int last, int LEAFARRAYMAX,
+									 int NONLEAFARRAYMAX,
+									 RIDKeyPair<T> ridKeyPair,
+									 T1* leafNode,
+									 PageId& newPageId,
+						             T & newValue);
+
+
+
+
+	template <class T, class T2>
+	void nonLeafSplitHelper(int pos,
+							int NONLEAFARRAYMAX,
+							T2* nonLeafNode,
+							PageId& newPageId,
+							T & newValue,
+							T & newChildValue,
+							PageId newChildPageId);
+
+
+
+	template <class T, class T1, class T2>
+	void createFirstLeaf(int LEAFARRAYMAX,
+									 RIDKeyPair<T> ridKeyPair,
+									 T2* nonLeafNode,
+									 PageId pageId);
+
+
+//////////////////////////////////////////////////////////////////////
 
 		template<class T, class T1>
 	void handleNewRoot(T& newValue, PageId newPageId, int ARRAYMAX);
@@ -494,7 +525,7 @@ class BTreeIndex {
 	 * @throws ScanNotInitializedException If no scan has been initialized.
 	**/
 	const void endScan();
-	
-};
+
+	};
 
 }
