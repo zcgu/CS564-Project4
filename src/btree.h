@@ -504,7 +504,8 @@ class BTreeIndex {
 
 	template<class T, class T1>
 	void startScanHelper(T lowValParm,
-						 T highValParm
+						 T highValParm,
+						 int ARRAYMAX
 	);
 
 
