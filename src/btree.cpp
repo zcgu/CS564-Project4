@@ -571,6 +571,8 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 	T1* leafNode;
 	while(1){
 		leafNode = (T1*) currentPageData;
+
+		//Go to next page
 		if(leafNode->ridArray[nextEntry].page_number == 0
 		   || nextEntry == ARRAYMAX) {
 
@@ -589,6 +591,7 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			continue;
 		}
 
+		//Do not satisfy
 		if((lowOp==GT && !biggerThan<T> (leafNode->keyArray[nextEntry], lowVal) )
 		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal))
 		   || (highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
@@ -597,7 +600,9 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry++;
 			continue;
 		}
-		std::cout<<"Got: "<< std::endl <<leafNode->keyArray[nextEntry] << std::endl; //TODO:delete
+//		std::cout<<"Got: "<< std::endl <<leafNode->keyArray[nextEntry] << std::endl; //TODO:delete
+
+		//Got a record
 		outRid = leafNode->ridArray[nextEntry];
 		nextEntry++;
 		return ;
