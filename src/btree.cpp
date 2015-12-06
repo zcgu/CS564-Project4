@@ -139,7 +139,7 @@ bool smallerThan(T a, T b){
 
 template <>
 bool smallerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-	return strcmp(a, b) < 0;
+	return strncmp(a, b, STRINGSIZE) < 0;
 }
 
 template <class T>
@@ -149,10 +149,10 @@ bool biggerThan(T a, T b){
 
 template <>
 bool biggerThan<char[STRINGSIZE]>(char a[STRINGSIZE], char b[STRINGSIZE]){
-	return strcmp(a, b) > 0;
+	return strncmp(a, b, STRINGSIZE) > 0;		
 }
 
-	template <class T>
+template <class T>
 bool equalTo(T a, T b){
 	return a==b;
 }
@@ -385,7 +385,8 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 
 		//find pageArray position
 		int pos = 0;
-		while(!smallerThan(ridKeyPair.key, nonLeafNode->keyArray[pos])
+		
+		while(!smallerThan<T> (ridKeyPair.key, nonLeafNode->keyArray[pos])
 			  && nonLeafNode->pageNoArray[pos + 1] != 0
 			  && pos < NONLEAFARRAYMAX)
 			pos++;
@@ -400,20 +401,17 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 		}
 
 		//call recursive function
+		bufMgr->unPinPage(file, pageId, false);
 		T newChildValue;
 		PageId newChildPageId = 0;
-		insertEntryRecursive<T, T1, T2>
-				(ridKeyPair,
-				 nonLeafNode->pageNoArray[pos],
-				 nonLeafNode->level == 1,
-				 LEAFARRAYMAX,
-				 NONLEAFARRAYMAX,
-				 newChildValue,
-				 newChildPageId);
+		insertEntryRecursive<T, T1, T2>(ridKeyPair, nonLeafNode->pageNoArray[pos], nonLeafNode->level == 1,
+										LEAFARRAYMAX, NONLEAFARRAYMAX, newChildValue, newChildPageId);
 
 		//check if child split
 		if(newChildPageId != 0){
 			//if child split
+			bufMgr->readPage(file, pageId, page);
+			T2* nonLeafNode = (T2*) page;
 
 			//find last entry
 			int last;
@@ -435,10 +433,12 @@ void BTreeIndex::insertEntryRecursive(RIDKeyPair<T> ridKeyPair,
 				nonLeafSplitHelper<T, T2>(pos, NONLEAFARRAYMAX, nonLeafNode,newPageId,newValue,
 										  newChildValue,newChildPageId);
 			}
+
+			bufMgr->unPinPage(file, pageId, true);
 		}
 
 		//unpin
-		bufMgr->unPinPage(file, pageId, true);
+		//bufMgr->unPinPage(file, pageId, true);
 	}
 }
 
@@ -521,9 +521,9 @@ const void BTreeIndex::insertEntry(const void *key, const RecordId rid)
 // -----------------------------------------------------------------------------
 
 const void BTreeIndex::startScan(const void* lowValParm,
-				   const Operator lowOpParm,
-				   const void* highValParm,
-				   const Operator highOpParm)
+								 const Operator lowOpParm,
+								 const void* highValParm,
+								 const Operator highOpParm)
 {
 	scanExecuting = true;
 	if (lowOpParm != GT && lowOpParm !=GTE ){
@@ -539,11 +539,11 @@ const void BTreeIndex::startScan(const void* lowValParm,
 	if(attributeType == INTEGER) {
 		this->lowValInt = *((int*) lowValParm);
 		this->highValInt = *((int *) highValParm);
-		startScanHelper<int, NonLeafNodeInt>(*((int*) lowValParm), *((int *) highValParm));
+		startScanHelper<int, NonLeafNodeInt>(*((int*) lowValParm), *((int *) highValParm), INTARRAYNONLEAFSIZE);
 	} else if (attributeType == DOUBLE) {
 		this->lowValDouble = *((double*) lowValParm);
 		this->highValDouble = *((double *) highValParm);
-		startScanHelper<double , NonLeafNodeDouble>(*((double *) lowValParm), *((double *) highValParm));
+		startScanHelper<double , NonLeafNodeDouble>(*((double *) lowValParm), *((double *) highValParm), DOUBLEARRAYNONLEAFSIZE);
 	} else {
 		strncpy((char*) this->lowValString.c_str(), (char *)lowValParm, STRINGSIZE-1);
 		strncpy(lowValChar, (char *)lowValParm, STRINGSIZE-1);
@@ -553,16 +553,17 @@ const void BTreeIndex::startScan(const void* lowValParm,
 		highValChar[STRINGSIZE - 1] = '\0';
 
 		std::cout<< "Start scan finish, lowValChar: "<< lowValChar <<" highValChar: "<< highValChar<<std::endl;
-		startScanHelper<char[STRINGSIZE], NonLeafNodeString> (lowValChar, highValChar);
+		startScanHelper<char[STRINGSIZE], NonLeafNodeString> (lowValChar, highValChar, STRINGARRAYNONLEAFSIZE);
 	}
 
 }
 
 template<class T, class T1>
 void BTreeIndex::startScanHelper(T lowValParm,
-								 T highValParm)
+								 T highValParm,
+								 int NONLEAFARRAYMAX)
 {
-	if(biggerThan(lowValParm,  highValParm))
+	if(biggerThan<T> (lowValParm,  highValParm))
 		throw BadScanrangeException();
 
 	//find first one
@@ -570,14 +571,25 @@ void BTreeIndex::startScanHelper(T lowValParm,
 	bufMgr->readPage(file, currentPageNum, currentPageData);
 	T1* nonLeafNode = (T1*) currentPageData; std::cout<<"current page level:" << nonLeafNode->level<<std::endl;//TODO
 
+	int pos = 0;
 	while(nonLeafNode->level != 1) {std::cout<<"start scan go to next nonleaf page:" << nonLeafNode->pageNoArray[0]<<std::endl;//TODO
-		PageId nextPageId = nonLeafNode->pageNoArray[0];
+		pos = 0;
+		while(!smallerThan<T> (lowValParm, nonLeafNode->keyArray[pos])
+			  && nonLeafNode->pageNoArray[pos + 1] != 0
+			  && pos < NONLEAFARRAYMAX)
+			pos++;
+		PageId nextPageId = nonLeafNode->pageNoArray[pos];
 		bufMgr->readPage(file, nextPageId, currentPageData);
 		bufMgr->unPinPage(file, currentPageNum, false);
 		currentPageNum = nextPageId;
 		nonLeafNode = (T1*) currentPageData;
 	}
-	PageId nextPageId = nonLeafNode->pageNoArray[0];
+	pos = 0;
+	while(!smallerThan<T> (lowValParm, nonLeafNode->keyArray[pos])
+		  && nonLeafNode->pageNoArray[pos + 1] != 0
+		  && pos < NONLEAFARRAYMAX)
+		pos++;
+	PageId nextPageId = nonLeafNode->pageNoArray[pos];
 	bufMgr->readPage(file, nextPageId, currentPageData);
 	bufMgr->unPinPage(file, currentPageNum, false);
 	currentPageNum = nextPageId;
@@ -613,8 +625,7 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 		leafNode = (T1*) currentPageData;
 
 		//Go to next page
-		if(leafNode->ridArray[nextEntry].page_number == 0
-		   || nextEntry == ARRAYMAX) {
+		if(leafNode->ridArray[nextEntry].page_number == 0 || nextEntry == ARRAYMAX) {
 
 			PageId nextPageNum = leafNode->rightSibPageNo;
 			if(nextPageNum == 0){
@@ -631,23 +642,19 @@ void BTreeIndex::scanNextHelper(RecordId &outRid, T lowVal, T highVal, int ARRAY
 			nextEntry = 0;
 			continue;
 		}
-		std::cout<<" Got: "<< leafNode->keyArray[nextEntry] ; //TODO:delete
+//		std::cout<<" Got: "<< leafNode->keyArray[nextEntry] ; //TODO:delete
 		//Do not satisfy
 		if((lowOp==GT && !biggerThan<T> (leafNode->keyArray[nextEntry], lowVal) )
 		   || (lowOp==GTE && smallerThan<T> (leafNode->keyArray[nextEntry], lowVal))
-		   )
-		{
+		   ) {
 			nextEntry++;
 			continue;
 		}
 
 		if((highOp==LT && !smallerThan<T> (leafNode->keyArray[nextEntry],  highVal))
-		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) )){
-		//	bufMgr->unPinPage(file, currentPageNum, false);
+		   || (highOp==LTE && biggerThan<T> (leafNode->keyArray[nextEntry], highVal) ))
 			throw IndexScanCompletedException();
-		//	nextEntry++;
-		//	continue;
-		}
+
 
 //		std::cout<<" Got: "<< leafNode->keyArray[nextEntry] ; //TODO:delete
 
