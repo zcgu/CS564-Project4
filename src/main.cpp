@@ -176,9 +176,9 @@ int main(int argc, char **argv)
 	test1();
 	test2();
 	test3();
-//	test4();
-//	test5();
 	test6();
+	test4();
+	test5();
 	errorTests();
 	File::remove(intIndexName);
 
@@ -226,14 +226,14 @@ void test4()
 	relationSize = 400000;
 
 	std::cout << "---------------------" << std::endl;
-	std::cout << "createBigRelationForward" << std::endl;
+	std::cout << "createBigRelationForward, this may take a long time" << std::endl;
 
 	createRelationForward();
 	indexTests();
 	deleteRelation();
 
 	std::cout << "---------------------" << std::endl;
-	std::cout << "createBigRelationBackward" << std::endl;
+	std::cout << "createBigRelationBackward, this may take a long time" << std::endl;
 	createRelationBackward();
 	indexTests();
 	deleteRelation();
@@ -257,14 +257,14 @@ void test5()
 	relationSize = 600000;
 
 	std::cout << "---------------------" << std::endl;
-	std::cout << "createBigRelationForward2" << std::endl;
+	std::cout << "createBigRelationForward2, this may take a longer time" << std::endl;
 
 	createRelationForward();
 	indexTests();
 	deleteRelation();
 
 	std::cout << "---------------------" << std::endl;
-	std::cout << "createBigRelationBackward2" << std::endl;
+	std::cout << "createBigRelationBackward2, this may take a longer time" << std::endl;
 	createRelationBackward();
 	indexTests();
 	deleteRelation();
